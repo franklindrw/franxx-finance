@@ -11,13 +11,13 @@ export const styles = StyleSheet.create({
   },
   titlePrimary: {
     fontFamily: theme.font_family.light,
-    fontSize: theme.font_size.xl,
+    fontSize: theme.font_size.x2l,
     color: theme.colors.primary,
     marginBottom: -20,
   },
   titleSecondary: {
     fontFamily: theme.font_family.bold,
-    fontSize: theme.font_size.xxl,
+    fontSize: theme.font_size.x3l,
     color: theme.colors.primary,
   },
   subtitle: {
