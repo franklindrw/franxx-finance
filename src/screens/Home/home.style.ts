@@ -27,14 +27,14 @@ export const styles = StyleSheet.create({
     backgroundColor: theme.colors.background_light,
     borderRadius: theme.sizes.lg,
     padding: theme.sizes.lg,
-    justifyContent: "space-around",
+    justifyContent: "center",
     marginVertical: theme.sizes.sm,
     marginHorizontal: theme.sizes.lg,
   },
   income_item: {
     borderRightWidth: 1,
     borderColor: theme.colors.tertiary,
-    paddingRight: theme.sizes.lg,
+    paddingHorizontal: theme.sizes.lg,
   },
   income_label: {
     fontFamily: theme.font_family.regular,
@@ -46,4 +46,11 @@ export const styles = StyleSheet.create({
     fontFamily: theme.font_family.semiBold,
     fontSize: theme.font_size.lg,
   },
+
+  buttons_container: {
+    marginVertical: theme.sizes.lg,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    marginHorizontal: theme.sizes.lg,
+  }
 });
