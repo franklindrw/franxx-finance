@@ -18,7 +18,6 @@ export const styles = StyleSheet.create({
     borderRadius: theme.sizes.sm,
     flexDirection: "row",
     justifyContent: "space-between",
-    marginVertical: theme.sizes.xs,
     marginHorizontal: theme.sizes.md,
     padding: theme.sizes.md,
   },

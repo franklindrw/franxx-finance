@@ -5,7 +5,6 @@ import { Beef, Hammer, Warehouse, Briefcase } from 'lucide-react-native';
 import { numberToReal } from "../../utils/numberToReal";
 import { stringToDate } from "../../utils/stringToDate";
 import { typeValueEnum } from "../../enums/enums";
-import { theme } from "../../theme/theme";
 
 const data = require('../../data/recent_activity.json');
 
@@ -19,7 +18,7 @@ interface ActivityCardProps {
   category: string;
 }
 
-const ActivityCard = ({ id, name, date, value, type, category }: ActivityCardProps)  => {
+const ActivityCard: React.FC<ActivityCardProps> = React.memo(({ id, name, date, value, type, category }) => {
   return (
     <View style={styles.item_container} key={id}>
       <View style={styles.item_row}>
@@ -40,7 +39,7 @@ const ActivityCard = ({ id, name, date, value, type, category }: ActivityCardPro
       </View>
     </View>
   );
-}
+});
 
 export default function ActivityList() {
   return (
