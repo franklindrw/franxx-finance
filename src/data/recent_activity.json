@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Supermercado",
+    "category": "alimentacao",
+    "value": 235.78,
+    "date": "2021-04-02",
+    "type": "cartao"
+  },
+  {
+    "id": 2,
+    "name": "Internet",
+    "category": "servicos",
+    "value": 99.90,
+    "date": "2021-04-05",
+    "type": "dinheiro"
+  },
+  {
+    "id": 3,
+    "name": "Aluguel",
+    "category": "moradia",
+    "value": 1200.00,
+    "date": "2021-04-10",
+    "type": "dinheiro"
+  },
+  {
+    "id": 4,
+    "name": "Salário",
+    "category": "trabalho",
+    "value": 2500.00,
+    "date": "2021-04-15",
+    "type": "dinheiro"
+  },
+  {
+    "id": 5,
+    "name": "Luz",
+    "category": "servicos",
+    "value": 120.00,
+    "date": "2021-04-20",
+    "type": "dinheiro"
+  },
+  {
+    "id": 6,
+    "name": "Água",
+    "category": "servicos",
+    "value": 50.00,
+    "date": "2021-04-25",
+    "type": "dinheiro"
+  },
+  {
+    "id": 7,
+    "name": "Almoço",
+    "category": "alimentacao",
+    "value": 25.00,
+    "date": "2021-04-30",
+    "type": "cartao"
+  },
+  {
+    "id": 8,
+    "name": "Pizzaria",
+    "category": "alimentacao",
+    "value": 35.00,
+    "date": "2021-04-30",
+    "type": "cartao"
+  }
+]

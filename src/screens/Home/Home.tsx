@@ -4,6 +4,7 @@ import { styles } from "./home.style";
 import Heading from "../../components/Heading/Heading";
 import { theme } from "../../theme/theme";
 import TransactionButton from "../../components/TransactionButton/TransactionButton";
+import ActivityList from "../../components/ActivityList/ActivityList";
 
 export default function Home() {
 
@@ -31,6 +32,8 @@ export default function Home() {
         <TransactionButton variant="success" title="Adicionar Receita" />
         <TransactionButton variant="danger" title="Adicionar Despesa" />
       </View>
+
+      <ActivityList />
     </SafeAreaView>
   );
 }

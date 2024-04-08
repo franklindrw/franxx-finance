@@ -14,12 +14,12 @@ export const styles = StyleSheet.create({
   wallet_label: {
     fontFamily: theme.font_family.regular,
     color: theme.colors.primary,
-    fontSize: theme.font_size.lg,
+    fontSize: theme.font_size.md,
   },
   wallet_value: {
     fontFamily: theme.font_family.semiBold,
     color: theme.colors.primary,
-    fontSize: theme.font_size.x2l,
+    fontSize: theme.font_size.xl,
   },
   
   income_container: {
@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
     borderRadius: theme.sizes.lg,
     padding: theme.sizes.lg,
     justifyContent: "center",
-    marginVertical: theme.sizes.sm,
+    marginVertical: theme.sizes.xs,
     marginHorizontal: theme.sizes.lg,
   },
   income_item: {

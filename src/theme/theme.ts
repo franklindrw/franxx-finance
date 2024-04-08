@@ -3,6 +3,7 @@ export const theme = {
     backgroud: '#5A9BFF',
     background_dark: 'rgba(13, 71, 161, 0.35)',
     background_light: 'rgba(250, 250, 250, 0.75)',
+    background_xlight: 'rgba(250, 250, 250, 0.20)',
 
     primary: '#FAFAFA',
     secondary: '#FFBD5A',
