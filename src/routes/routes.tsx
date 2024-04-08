@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Welcome from "../screens/Welcome/Welcome";
-import Home from "../screens/Home/Home";
+import MainTabNavigator from "./MainTabNavigator";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +17,7 @@ export default function Routes() {
         }}
       >
         <Stack.Screen name="Welcome" component={Welcome} />
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Main" component={MainTabNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   );

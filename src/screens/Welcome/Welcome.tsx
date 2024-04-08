@@ -9,7 +9,7 @@ export default function Welcome({ navigation }: { navigation: any }) {
 
   const handleHome = () => {
     // Navigate to Home screen
-    navigation.navigate("Home");
+    navigation.navigate("Main");
   }
 
   return (
