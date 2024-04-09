@@ -22,10 +22,15 @@ export default function MainTabNavigator() {
         tabBarActiveTintColor: theme.colors.primary,
         tabBarInactiveTintColor: theme.colors.primary,
         tabBarShowLabel: false,
+        tabBarIconStyle: {
+          marginBottom: theme.sizes.md,
+        },
         tabBarStyle: {
+          height: 80,
           paddingTop: theme.sizes.lg,
           backgroundColor: theme.colors.tertiary,
-          borderTopColor: 'transparent',
+          borderTopColor: theme.colors.tertiary,
+          paddingBottom: theme.sizes.lg,
         }
       }}
     >

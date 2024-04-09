@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: theme.colors.background_dark,
     marginHorizontal: theme.sizes.lg,
+    marginBottom: theme.sizes.sm,
     borderRadius: theme.sizes.md,
   },
   title: {
