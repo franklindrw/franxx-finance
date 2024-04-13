@@ -3,10 +3,23 @@ import { SafeAreaView, View, Text } from "react-native";
 import { styles } from "./home.style";
 import Heading from "../../components/Heading/Heading";
 import { theme } from "../../theme/theme";
-import TransactionButton from "../../components/TransactionButton/TransactionButton";
+import TransactionButton from "../../components/Transaction/TransactionButton/TransactionButton";
 import ActivityList from "../../components/ActivityList/ActivityList";
+import TransactionModal from "../../components/Transaction/TransactionModal/TransactionModal";
 
 export default function Home() {
+  const [openModal, setOpenModal] = React.useState(false);
+  const [transactionType, setTransactionType] = React.useState("");
+
+  const handleOpenModal = (transaction: string) => {
+    setTransactionType(transaction);
+    setOpenModal(true);
+  }
+
+  const handleCloseModal = () => {
+    setTransactionType("");
+    setOpenModal(false);
+  }
 
   return (
     <SafeAreaView style={styles.root}>
@@ -29,11 +42,22 @@ export default function Home() {
       </View>
 
       <View style={styles.buttons_container}>
-        <TransactionButton variant="success" title="Adicionar Receita" />
-        <TransactionButton variant="danger" title="Adicionar Despesa" />
+        <TransactionButton 
+          variant="success"
+          title="Adicionar Receita"
+          onPress={() => handleOpenModal("Adicionar Receita")}
+        />
+
+        <TransactionButton 
+          variant="danger"
+          title="Adicionar Despesa"
+          onPress={() => handleOpenModal("Adicionar Despesa")}
+        />
       </View>
 
       <ActivityList />
+
+      <TransactionModal onOpen={openModal} onClose={handleCloseModal} type={transactionType} />
     </SafeAreaView>
   );
 }

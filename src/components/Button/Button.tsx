@@ -4,7 +4,7 @@ import { styles } from "./button.style";
 
 interface ButtonProps {
   label: string;
-  width?: string;
+  width?: number | string;
   variant?: "solid" | "outline" | "ghost" | "link";
   color?: string;
   onPress?: () => void;

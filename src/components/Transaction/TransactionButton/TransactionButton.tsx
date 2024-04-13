@@ -2,7 +2,7 @@ import React from "react";
 import { TouchableOpacity, View, Text } from "react-native";
 import { styles } from "./transactionButton.style";
 import { TrendingUp, TrendingDown } from "lucide-react-native";
-import { theme } from "../../theme/theme";
+import { theme } from "../../../theme/theme";
 
 interface TransactionButtonProps {
   variant: "success" | "danger";

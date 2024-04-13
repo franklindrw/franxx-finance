@@ -32,8 +32,11 @@ export const theme = {
     md: 14,
     lg: 18,
     xl: 24,
-    x2l: 38,
-    x3l: 62,
+    x2l: 32,
+    x3l: 48,
+    x4l: 64,
+    x5l: 80,
+    x6l: 96,
   },
 
   sizes: {
@@ -43,5 +46,9 @@ export const theme = {
     lg: 16,
     xl: 24,
     xxl: 32,
+    x3l: 48,
+    x4l: 64,
+    x5l: 80,
+    x6l: 96,
   }
 }
