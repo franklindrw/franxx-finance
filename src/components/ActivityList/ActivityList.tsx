@@ -1,10 +1,11 @@
 import React from "react";
 import { View, Text, FlatList } from "react-native";
 import { styles } from "./activityList.style";
-import { Beef, Hammer, Warehouse, Briefcase } from 'lucide-react-native';
 import { numberToReal } from "../../utils/numberToReal";
 import { stringToDate } from "../../utils/stringToDate";
 import { typeValueEnum } from "../../enums/enums";
+import { categoryIcons, type CategoryIcons } from "../../utils/categoryIcons";
+import { CircleHelp } from 'lucide-react-native';
 
 const data = require('../../data/recent_activity.json');
 
@@ -19,14 +20,13 @@ interface ActivityCardProps {
 }
 
 const ActivityCard: React.FC<ActivityCardProps> = React.memo(({ id, name, date, value, type, category }) => {
+  const Icon = categoryIcons[category as CategoryIcons] ?? CircleHelp;
+
   return (
     <View style={styles.item_container} key={id}>
       <View style={styles.item_row}>
         <View style={styles.item_icon}>
-          {category === 'alimentacao' && <Beef size={24} color='white' />}
-          {category === 'moradia' && <Warehouse size={24} color='white' />}
-          {category === 'trabalho' && <Briefcase size={24} color='white' />}
-          {category === 'servicos' && <Hammer size={24} color='white' />}
+          {!!Icon && <Icon size={24} color='white' />}
         </View>
         <View>
           <Text style={styles.itemTitle}>{name}</Text>

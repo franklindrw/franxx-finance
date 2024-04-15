@@ -5,6 +5,7 @@ import { XIcon } from "lucide-react-native";
 import IconButton from "../../IconButton/IconButton";
 import TextField from "../../TextField/TextField";
 import Button from "../../Button/Button";
+import SelectCategory from "../SelectCategory/SelectCategory";
 
 interface TransactionModalProps {
   type: string;
@@ -12,7 +13,20 @@ interface TransactionModalProps {
   onClose: () => void;
 }
 
+import transactionData from "../../../data/transaction_categories.json";
+
 export default function TransactionModal({ onOpen, onClose, type }: TransactionModalProps) {
+  const [categoryActive, setCategoryActive] = React.useState<string>("");
+
+  const handleCategoryActive = (category: string) => {
+    setCategoryActive(category);
+  };
+
+  const handleCloseModal = () => {
+    setCategoryActive("");
+    onClose();
+  }
+
   return (
     <Modal
       animationType="slide"
@@ -22,8 +36,8 @@ export default function TransactionModal({ onOpen, onClose, type }: TransactionM
     >
       <View style={styles.modal_container}>
         <View style={styles.modal_header}>
-          <Text style={styles.title}>{type}</Text>
-          <IconButton icon={<XIcon size={20} />} onPress={onClose} />
+          <Text style={styles.title}>Adicionar {type}</Text>
+          <IconButton icon={<XIcon size={20} />} onPress={handleCloseModal} />
         </View>
 
         <View style={styles.inputs_container}>
@@ -40,9 +54,15 @@ export default function TransactionModal({ onOpen, onClose, type }: TransactionM
             placeholder="R$ 00,00"
             size="lg"
           />
+
+          <SelectCategory 
+            data={type === "receita" ? transactionData.income : transactionData.expenses}
+            categoryActive={categoryActive}
+            onPress={handleCategoryActive}
+          />
         </View>
 
-        <Button label="Salvar" width="80%" onPress={() => {}} />
+        <Button label="Adicionar" width="80%" onPress={() => {}} />
       </View>
     </Modal>
   );

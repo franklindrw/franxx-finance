@@ -3,24 +3,27 @@ import { theme } from "../../../theme/theme";
 
 export const styles = StyleSheet.create({
   modal_container: {
-    width: "100%",
-    height: "70%",
     alignItems: "center",
     backgroundColor: theme.colors.white,
     borderRadius: 20,
-    position: "absolute",
     bottom: 0,
+    height: "auto",
+    justifyContent: "space-between",
+    paddingVertical: theme.sizes.lg,
+    position: "absolute",
+    width: "100%",
   },
   modal_header: {
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: 20,
+    paddingHorizontal: 20,
   },
   inputs_container: {
     width: "100%",
     paddingHorizontal: 10,
+    paddingVertical: 20,
   },
   title: {
     fontSize: theme.font_size.lg,

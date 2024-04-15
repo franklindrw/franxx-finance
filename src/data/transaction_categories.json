@@ -1,0 +1,66 @@
+{
+  "income": [
+    {
+      "id": 1,
+      "name": "Salário",
+      "category": "trabalho"
+    },
+    {
+      "id": 2,
+      "name": "Invest",
+      "category": "dinheiro"
+    },
+    {
+      "id": 3,
+      "name": "Extra",
+      "category": "extra"
+    },
+    {
+      "id": 4,
+      "name": "Favores",
+      "category": "dirty"
+    },
+    {
+      "id": 5,
+      "name": "Outros",
+      "category": "others"
+    }
+  ],
+  "expenses": [
+    {
+      "id": 1,
+      "name": "Alimentação",
+      "category": "alimentacao"
+    },
+    {
+      "id": 2,
+      "name": "Transporte",
+      "category": "transporte"
+    },
+    {
+      "id": 3,
+      "name": "Lazer",
+      "category": "lazer"
+    },
+    {
+      "id": 4,
+      "name": "Saúde",
+      "category": "saude"
+    },
+    {
+      "id": 5,
+      "name": "Educação",
+      "category": "educacao"
+    },
+    {
+      "id": 6,
+      "name": "Moradia",
+      "category": "moradia"
+    },
+    {
+      "id": 7,
+      "name": "Outros",
+      "category": "others"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import { TouchableOpacity } from "react-native";
-import { styles } from "./IconButton.style";
+import { styles } from "./iconButton.style";
 
 export interface IconButtonProps {
   onPress?: () => void;

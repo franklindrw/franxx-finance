@@ -45,13 +45,13 @@ export default function Home() {
         <TransactionButton 
           variant="success"
           title="Adicionar Receita"
-          onPress={() => handleOpenModal("Adicionar Receita")}
+          onPress={() => handleOpenModal("receita")}
         />
 
         <TransactionButton 
           variant="danger"
           title="Adicionar Despesa"
-          onPress={() => handleOpenModal("Adicionar Despesa")}
+          onPress={() => handleOpenModal("despesa")}
         />
       </View>
 
