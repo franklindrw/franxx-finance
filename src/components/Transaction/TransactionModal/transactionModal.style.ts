@@ -29,5 +29,16 @@ export const styles = StyleSheet.create({
     fontSize: theme.font_size.lg,
     fontFamily: theme.font_family.semiBold,
     color: theme.colors.tertiary,
+  },
+  label: {
+    fontSize: theme.font_size.md,
+    fontFamily: theme.font_family.light,
+    color: theme.colors.tertiary,
+    marginBottom: 5,
+  },
+  date_text: {
+    fontFamily: theme.font_family.medium,
+    fontSize: theme.font_size.lg,
+    color: theme.colors.tertiary,
   }
 });

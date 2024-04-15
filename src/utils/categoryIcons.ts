@@ -6,10 +6,11 @@ import {
   PiggyBank,
   Handshake,
   Axe,
-  Cross,
+  Plus,
   BookMarked,
   Heart,
-  Car
+  Car,
+  TreePalm,
 } from 'lucide-react-native';
 
 export const categoryIcons = {
@@ -20,10 +21,11 @@ export const categoryIcons = {
   dinheiro: PiggyBank,
   extra: Axe,
   dirty: Handshake,
-  others: Cross,
+  others: Plus,
   educacao: BookMarked,
   saude: Heart,
   transporte: Car,
+  lazer: TreePalm,
 } as const;
 
 export type CategoryIcons = keyof typeof categoryIcons;

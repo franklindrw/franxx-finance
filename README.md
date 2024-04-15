@@ -29,6 +29,27 @@
 
 <br /><br />
 
+## 📄 Notas de Implementação
+
+### Problema na compilação da lib Date Picker (15/04/2024)
+Ao instalar os pacotes e fazer a primeira compilação para Ios foi identificado um erro ao compilar a lib:
+
+```zsh
+	❌  (/Users/thiagonagumo/my-projects/franxx-finance-app/node_modules/@react-native-community/datetimepicker/ios/RNDateTimePickerShadowView.m:8:41)
+
+   6 | {
+   7 |   if (self = [super init]) {
+>  8 |     YGNodeSetMeasureFunc(self.yogaNode, RNDateTimePickerShadowViewMeasure);
+     |                                         ^ incompatible function pointer types passing 'YGSize ' (aka 'struct YGSize (struct YGNode *, float, enum YGMeasureMode, float, enum YGMeasureMode)') to parameter of type 'YGMeasureFunc' (aka 'struct YGSize (*)(const struct YGNode *, float, enum YGMeasureMode, float, enum YGMeasureMode)') [-Wincompatible-function-pointer-types]
+   9 |   }
+  10 |   return self;
+  11 | }
+```
+
+O mesmo foi corrigido acessando o arquivo `RNDateTimePickerShadowView.m` dentro da pasta *node_modules* e mudando a variável `YGNodeRef` para `YGNodeConstRef` na linha 44.
+
+<br /><br />
+
 ### 🖊 Autor
 
 <a href="https://github.com/franklindrw">

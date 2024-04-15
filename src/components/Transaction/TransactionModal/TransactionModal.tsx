@@ -14,9 +14,11 @@ interface TransactionModalProps {
 }
 
 import transactionData from "../../../data/transaction_categories.json";
+import DatePicker from "../../../infra/DatePicker/DatePicker";
 
 export default function TransactionModal({ onOpen, onClose, type }: TransactionModalProps) {
   const [categoryActive, setCategoryActive] = React.useState<string>("");
+  const [dateSelected, setDateSelected] = React.useState(new Date());
 
   const handleCategoryActive = (category: string) => {
     setCategoryActive(category);
@@ -37,7 +39,7 @@ export default function TransactionModal({ onOpen, onClose, type }: TransactionM
       <View style={styles.modal_container}>
         <View style={styles.modal_header}>
           <Text style={styles.title}>Adicionar {type}</Text>
-          <IconButton icon={<XIcon size={20} />} onPress={handleCloseModal} />
+          <IconButton icon={<XIcon size={20} color='#0D47A1' />} onPress={handleCloseModal} />
         </View>
 
         <View style={styles.inputs_container}>
@@ -60,6 +62,11 @@ export default function TransactionModal({ onOpen, onClose, type }: TransactionM
             categoryActive={categoryActive}
             onPress={handleCategoryActive}
           />
+
+          <View style={styles.inputs_container}>
+            <Text style={styles.label}>Selecione a Data</Text>
+            <DatePicker date={dateSelected} setDate={setDateSelected} stylesProps={styles.date_text} />
+          </View>
         </View>
 
         <Button label="Adicionar" width="80%" onPress={() => {}} />
