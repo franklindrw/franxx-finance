@@ -1,6 +1,7 @@
 import React from "react";
 import { TouchableOpacity, View, Text } from "react-native";
 import { styles } from "./button.style";
+import { theme } from "../../theme/theme";
 
 interface ButtonProps {
   label: string;
@@ -10,11 +11,11 @@ interface ButtonProps {
   onPress?: () => void;
 }
 
-export default function Button({ label, width, variant, color, onPress }: ButtonProps) {
+export default function Button({ label, width, variant, color = theme.colors.secondary, onPress }: ButtonProps) {
   return (
     <TouchableOpacity
       /* @ts-ignore */
-      style={[styles.root, { width: width }]}
+      style={[styles.root, { width: width, backgroundColor: color }]}
       onPress={onPress}
       activeOpacity={0.7}
     >

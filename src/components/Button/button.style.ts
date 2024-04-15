@@ -18,7 +18,6 @@ export const styles = StyleSheet.create({
   },
   container: {
     borderRadius: 50,
-    backgroundColor: theme.colors.secondary,
     color: theme.colors.primary,
     padding: 10,
   },

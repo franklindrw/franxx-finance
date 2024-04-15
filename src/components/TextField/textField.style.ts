@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
   input: {
     width: "100%",
     marginBottom: theme.sizes.xs,
+    color: theme.colors.tertiary,
   },
   input_sm: {
     height: theme.sizes.lg,
