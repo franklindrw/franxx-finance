@@ -32,7 +32,7 @@
 ## 📄 Notas de Implementação
 
 ### Problema na compilação da lib Date Picker (15/04/2024)
-Ao instalar os pacotes e fazer a primeira compilação para Ios foi identificado um erro ao compilar a lib:
+Ao instalar os pacotes e fazer o build para Ios foi identificado um erro ao compilar a lib:
 
 ```zsh
 	❌  (/Users/thiagonagumo/my-projects/franxx-finance-app/node_modules/@react-native-community/datetimepicker/ios/RNDateTimePickerShadowView.m:8:41)
