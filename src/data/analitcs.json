@@ -1,0 +1,14 @@
+{
+  "weekData": {
+    "labels": ["Seg", "Ter", "Qua", "Qui", "Sex", "Sab", "Dom"],
+    "datasets": [{ "data": [20, 45, 28, 80, 99, 43, 22] }]
+  },
+  "monthData": {
+    "labels": ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+    "datasets": [{ "data": [20, 45, 28, 80, 99, 43, 22, 50, 60, 70, 80, 90] }]
+  },
+  "yearData": {
+    "labels": ["2018", "2019", "2020", "2021", "2022", "2023"],
+    "datasets": [{ "data": [20, 45, 28, 80, 90, 120] }]
+  }
+}
