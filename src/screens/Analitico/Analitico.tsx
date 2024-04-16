@@ -28,8 +28,8 @@ export default function Analitico() {
         containerStyle={{ width: "80%", height: 35, marginVertical: 20, borderRadius: 50, borderWidth: 0 }}
         buttonStyle={{ backgroundColor: theme.colors.background_xdark }}
         textStyle={{ color: theme.colors.gray, fontFamily: theme.font_family.light }}
-        selectedButtonStyle={{ backgroundColor: theme.colors.white }}
-        selectedTextStyle={{ color: theme.colors.tertiary, fontFamily: theme.font_family.medium }}
+        selectedButtonStyle={{ backgroundColor: theme.colors.tertiary }}
+        selectedTextStyle={{ color: theme.colors.white, fontFamily: theme.font_family.medium }}
       />
     </SafeAreaView>
   );
