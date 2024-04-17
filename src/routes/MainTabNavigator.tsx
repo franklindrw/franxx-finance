@@ -5,10 +5,10 @@ import { HomeIcon, AreaChartIcon, ClipboardListIcon, UserRoundIcon } from "lucid
 import { styles } from "./mainTabNavigator.style";
 import { theme } from "../theme/theme";
 
-import Home from "../screens/Home/Home";
-import Analitico from "../screens/Analitico/Analitico";
-import Historico from "../screens/Historico/Historico";
-import User from "../screens/User/User";
+import Home from "../app/Home/Home";
+import Analitico from "../app/Analitico/screen/Analitico";
+import Historico from "../app/Historico/Historico";
+import User from "../app/User/User";
 
 const Tab = createBottomTabNavigator();
 
