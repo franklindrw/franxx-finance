@@ -6,7 +6,7 @@ import { theme } from "../../../theme/theme";
 import { type ChartData } from "../../../interfaces/chartData";
 import data from "../../../data/analitcs.json";
 import LineChart from "../../../components/Charts/LineChart";
-import WalletCard from "../components/WalletCard";
+import WalletCard from "../components/WalletCard/WalletCard";
 
 export default function Analitico() {
   const [selectedIndex, setSelectedIndex] = React.useState(0);
