@@ -1,14 +1,15 @@
 import React from "react";
-import { SafeAreaView, Text, Dimensions } from "react-native";
+import { SafeAreaView, Text } from "react-native";
 import { ButtonGroup } from "@rneui/themed";
-import { LineChart } from "react-native-chart-kit";
 import { styles } from "./analitico.style";
 import { theme } from "../../theme/theme";
+import { type ChartData } from "../../interfaces/chartData";
 import data from "../../data/analitcs.json";
+import LineChart from "../../components/Charts/LineChart";
 
 export default function Analitico() {
   const [selectedIndex, setSelectedIndex] = React.useState(0);
-  const [analitcsData, setAnalitcsData] = React.useState<any>();
+  const [analitcsData, setAnalitcsData] = React.useState<ChartData>();
 
   React.useEffect(() => {
     if (selectedIndex === 0) setAnalitcsData(data.weekData);
@@ -35,27 +36,8 @@ export default function Analitico() {
         selectedTextStyle={{ color: theme.colors.white, fontFamily: theme.font_family.medium }}
       />
 
-      <LineChart
-        data={analitcsData}
-        width={Dimensions.get("window").width - 20}
-        height={200}
-        yAxisLabel="R$"
-        yAxisSuffix="k"
-        yAxisInterval={1}
-        chartConfig={{
-          backgroundGradientFrom: theme.colors.background_xdark,
-          backgroundGradientTo: theme.colors.background_xdark,
-          decimalPlaces: 0,
-          color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-          labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-          propsForDots: {
-            r: "4",
-            strokeWidth: "1",
-            stroke: theme.colors.tertiary
-          }
-        }}
-        style={{ borderRadius: 8 }}
-      />
+      <Text style={styles.subtitle}>Ganhos</Text>
+      {!!analitcsData && <LineChart data={analitcsData} />}
     </SafeAreaView>
   );
 };
