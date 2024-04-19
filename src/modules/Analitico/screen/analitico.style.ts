@@ -19,5 +19,6 @@ export const styles = StyleSheet.create({
     color: theme.colors.white,
     paddingHorizontal: theme.sizes.md,
     paddingVertical: theme.sizes.xs,
+    marginTop: theme.sizes.md,
   }
 });

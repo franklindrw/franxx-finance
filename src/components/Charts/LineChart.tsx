@@ -17,7 +17,7 @@ export default function LineChart({ data }: LineChartProps) {
       yAxisLabel="R$ "
       yAxisInterval={1}
       chartConfig={{
-        backgroundGradientFrom: theme.colors.background_xdark,
+        backgroundGradientFrom: theme.colors.background_dark,
         backgroundGradientTo: theme.colors.background_xdark,
         decimalPlaces: 0,
         color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,

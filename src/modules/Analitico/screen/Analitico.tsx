@@ -7,6 +7,7 @@ import { type ChartData } from "../../../interfaces/chartData";
 import data from "../../../data/analitcs.json";
 import LineChart from "../../../components/Charts/LineChart";
 import WalletCard from "../components/WalletCard/WalletCard";
+import CalendarHeatmap from "../../../components/Charts/CalendarHeatmap";
 
 export default function Analitico() {
   const [selectedIndex, setSelectedIndex] = React.useState(0);
@@ -37,10 +38,13 @@ export default function Analitico() {
         selectedTextStyle={{ color: theme.colors.white, fontFamily: theme.font_family.medium }}
       />
 
-      <WalletCard />
+      <WalletCard value={35_460.45} percent={2.5} />
 
       <Text style={styles.subtitle}>Ganhos</Text>
       {!!analitcsData && <LineChart data={analitcsData} />}
+
+      <Text style={styles.subtitle}>Despesas</Text>
+      {!!analitcsData && <CalendarHeatmap data={data.expenses} />}
     </SafeAreaView>
   );
 };
