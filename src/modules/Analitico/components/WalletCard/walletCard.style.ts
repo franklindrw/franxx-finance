@@ -10,7 +10,6 @@ export const styles = StyleSheet.create({
     borderRadius: theme.sizes.xl,
     paddingVertical: theme.sizes.md,
     paddingHorizontal: theme.sizes.lg,
-    marginBottom: theme.sizes.lg,
     gap: theme.sizes.lg,
   },
   label: {
