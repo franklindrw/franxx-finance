@@ -1,14 +1,16 @@
 import React from "react";
-import { SafeAreaView, ScrollView, Text } from "react-native";
+import { SafeAreaView, ScrollView, Text, View } from "react-native";
 import { ButtonGroup } from "@rneui/themed";
 import { styles } from "./analitico.style";
 import { theme } from "../../../theme/theme";
 import { type ChartData } from "../../../interfaces/chartData";
-import data from "../../../data/analitcs.json";
 import LineChart from "../../../components/Charts/LineChart";
 import WalletCard from "../components/WalletCard/WalletCard";
 import CalendarHeatmap from "../../../components/Charts/CalendarHeatmap";
 import TotalExpensesCard from "../components/TotalExpensesCard/TotalExpensesCard";
+import ExpensesCategory from "../components/ExpensesCategory/ExpensesCategory";
+import data from "../../../data/analitcs.json";
+import expensesData from "../../../data/user_expenses.json";
 
 export default function Analitico() {
   const [selectedIndex, setSelectedIndex] = React.useState(0);
@@ -52,7 +54,12 @@ export default function Analitico() {
         {!!analitcsData && <CalendarHeatmap data={data.expenses} />}
         <TotalExpensesCard />
 
-        <Text style={styles.subtitle}>Gastos por categoria</Text>
+        <View style={styles.categorie_expenses}>
+          <Text style={styles.subtitle}>Gastos por categoria</Text>
+          {!!expensesData && expensesData.map((expense) => (
+            <ExpensesCategory key={expense.id} {...expense} />
+          ))}
+        </View>
       </ScrollView>
     </SafeAreaView>
   );

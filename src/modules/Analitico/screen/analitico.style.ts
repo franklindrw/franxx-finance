@@ -20,5 +20,13 @@ export const styles = StyleSheet.create({
     paddingHorizontal: theme.sizes.md,
     paddingVertical: theme.sizes.xs,
     marginTop: theme.sizes.md,
+  },
+  categorie_expenses: {
+    width: "100%",
+    alignItems: "center",
+    backgroundColor: theme.colors.background_dark,
+    borderRadius: theme.sizes.md,
+    marginBottom: theme.sizes.md,
+    paddingBottom: theme.sizes.xs,
   }
 });

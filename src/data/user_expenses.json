@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "category": "alimentacao",
+    "expense_total": 235.78,
+    "percentage": 9.85
+  },
+  {
+    "id": 2,
+    "category": "transporte",
+    "expense_total": 120.59,
+    "percentage": 3.65
+  },
+  {
+    "id": 3,
+    "category": "lazer",
+    "expense_total": 300.00,
+    "percentage": 12.00
+  },
+  {
+    "id": 4,
+    "category": "saude",
+    "expense_total": 150.00,
+    "percentage": 6.00
+  },
+  {
+    "id": 5,
+    "category": "educacao",
+    "expense_total": 200.00,
+    "percentage": 8.00
+  },
+  {
+    "id": 6,
+    "category": "outros",
+    "expense_total": 500.00,
+    "percentage": 20.00
+  }
+]
