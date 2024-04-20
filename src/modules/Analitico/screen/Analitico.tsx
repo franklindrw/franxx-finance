@@ -26,7 +26,10 @@ export default function Analitico() {
 
   return (
     <SafeAreaView style={styles.root}>
-      <ScrollView contentContainerStyle={{ alignItems: "center" }}>
+      <ScrollView
+        contentContainerStyle={{ alignItems: "center" }}
+        showsVerticalScrollIndicator={false}
+      >
         <Text style={styles.heading}>Analítico</Text>
 
         <ButtonGroup
@@ -45,9 +48,11 @@ export default function Analitico() {
         <Text style={styles.subtitle}>Ganhos</Text>
         {!!analitcsData && <LineChart data={analitcsData} />}
 
-        <Text style={styles.subtitle}>Despesas</Text>
+        <Text style={styles.subtitle}>Mapa de gastos</Text>
         {!!analitcsData && <CalendarHeatmap data={data.expenses} />}
         <TotalExpensesCard />
+
+        <Text style={styles.subtitle}>Gastos por categoria</Text>
       </ScrollView>
     </SafeAreaView>
   );

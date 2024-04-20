@@ -3,11 +3,12 @@ import { theme } from '../../../../theme/theme';
 
 export const styles = StyleSheet.create({
   container: {
+    width: '90%',
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
     backgroundColor: theme.colors.background_light,
-    borderRadius: theme.sizes.xl,
+    borderRadius: theme.sizes.lg,
     paddingVertical: theme.sizes.md,
     paddingHorizontal: theme.sizes.lg,
     gap: theme.sizes.lg,
