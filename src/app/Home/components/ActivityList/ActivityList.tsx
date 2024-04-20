@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text, FlatList } from "react-native";
 import { styles } from "./activityList.style";
-import { numberToReal } from "../../utils/numberToReal";
-import { stringToDate } from "../../utils/stringToDate";
-import { typeValueEnum } from "../../enums/enums";
-import { categoryIcons, type CategoryIcons } from "../../utils/categoryIcons";
+import { numberToReal } from "../../../../utils/numberToReal";
+import { stringToDate } from "../../../../utils/stringToDate";
+import { typeValueEnum } from "../../../../enums/enums";
+import { categoryIcons, type CategoryIcons } from "../../../../utils/categoryIcons";
 import { CircleHelp } from 'lucide-react-native';
 
 const data = require('../../data/recent_activity.json');

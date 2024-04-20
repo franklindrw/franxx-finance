@@ -3,15 +3,15 @@ import { View, Text, Modal } from "react-native";
 import { useForm } from "react-hook-form";
 import { styles } from "./transactionModal.style";
 import { XIcon } from "lucide-react-native";
-import IconButton from "../../IconButton/IconButton";
-import TextField from "../../TextField";
-import Button from "../../Button/Button";
+import IconButton from "../../../../components/IconButton/IconButton";
+import TextField from "../../../../components/TextField";
+import Button from "../../../../components/Button/Button";
 import SelectCategory from "../SelectCategory/SelectCategory";
-import { formatDate } from "../../../utils/stringToDate";
-import transactionData from "../../../data/transaction_categories.json";
-import DatePicker from "../../../infra/DatePicker/DatePicker";
-import { moneyToNumber } from "../../../utils/numberToReal";
-import { theme } from "../../../theme/theme";
+import { formatDate } from "../../../../utils/stringToDate";
+import transactionData from "../../../../data/transaction_categories.json";
+import DatePicker from "../../../../infra/DatePicker/DatePicker";
+import { moneyToNumber } from "../../../../utils/numberToReal";
+import { theme } from "../../../../theme/theme";
 
 interface TransactionModalProps {
   type: string;

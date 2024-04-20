@@ -1,8 +1,8 @@
 import React from 'react';
 import { TouchableOpacity, View, Text, ScrollView } from 'react-native';
 import { styles } from './selectCategory.style';
-import type { TransactionItem } from '../../../interfaces/transaction_categories';
-import { categoryIcons, type CategoryIcons } from '../../../utils/categoryIcons';
+import type { TransactionItem } from '../../../../interfaces/transaction_categories';
+import { categoryIcons, type CategoryIcons } from '../../../../utils/categoryIcons';
 import { CircleHelp } from 'lucide-react-native';
 
 interface SelectCategoryProps {

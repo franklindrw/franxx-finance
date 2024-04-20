@@ -1,7 +1,7 @@
 import React from "react";
 import { SafeAreaView, Text, Image, View } from "react-native";
 import { styles } from "./welcome.style";
-import Button from "../../components/Button/Button";
+import Button from "../../../components/Button/Button";
 
 const logoImg = require('../../../assets/logo.jpg');
 

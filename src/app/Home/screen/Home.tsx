@@ -1,11 +1,12 @@
 import React from "react";
 import { SafeAreaView, View, Text } from "react-native";
 import { styles } from "./home.style";
-import Heading from "../../components/Heading/Heading";
-import { theme } from "../../theme/theme";
-import TransactionButton from "../../components/Transaction/TransactionButton/TransactionButton";
-import ActivityList from "../../components/ActivityList/ActivityList";
-import TransactionModal from "../../components/Transaction/TransactionModal/TransactionModal";
+import { theme } from "../../../theme/theme";
+
+import Heading from "../components/Heading/Heading";
+import ActivityList from "../components/ActivityList/ActivityList";
+import TransactionModal from "../components/TransactionModal/TransactionModal";
+import TransactionButton from "../components/TransactionButton/TransactionButton";
 
 export default function Home() {
   const [openModal, setOpenModal] = React.useState(false);
