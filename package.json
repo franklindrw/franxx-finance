@@ -17,6 +17,7 @@
     "expo": "~50.0.15",
     "expo-app-loading": "^2.1.1",
     "expo-font": "~11.10.3",
+    "expo-module-scripts": "^3.4.2",
     "expo-splash-screen": "~0.26.4",
     "expo-status-bar": "~1.11.1",
     "expo-system-ui": "~2.9.3",

@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug iOS",
+            "cwd": "${workspaceFolder}",
+            "type": "reactnative",
+            "request": "launch",
+            "platform": "ios",
+            "target": "BB959124-F5C9-4637-A612-C963CFE6EC97",
+            "sourceMaps": true
+        }
+    ]
+}
