@@ -3,7 +3,7 @@ import { SafeAreaView, Text, Image, View } from "react-native";
 import { styles } from "./welcome.style";
 import Button from "../../../components/Button/Button";
 
-const logoImg = require('../../../assets/logo.jpg');
+const logoImg = require('../../../../assets/logo.jpg');
 
 export default function Welcome({ navigation }: { navigation: any }) {
 

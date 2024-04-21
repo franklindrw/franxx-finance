@@ -7,7 +7,7 @@ import { typeValueEnum } from "../../../../enums/enums";
 import { categoryIcons, type CategoryIcons } from "../../../../utils/categoryIcons";
 import { CircleHelp } from 'lucide-react-native';
 
-const data = require('../../data/recent_activity.json');
+const data = require('../../../../data/recent_activity.json');
 
 interface ActivityCardProps {
   id: string;
