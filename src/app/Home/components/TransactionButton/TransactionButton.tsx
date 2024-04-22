@@ -18,11 +18,12 @@ export default function TransactionButton({ variant, title, onPress }: Transacti
       style={[styles.root, { backgroundColor: color }]}
       activeOpacity={0.5}
       onPress={onPress}
+      testID="transaction-button"
     >
       <View style={styles.flex_container}>
         {variant === "success" ? <TrendingUp color="white" /> : <TrendingDown color="white" />}
         <Text style={styles.label}>{title}</Text>
       </View>
-    </TouchableOpacity>  
+    </TouchableOpacity>
   );
 }

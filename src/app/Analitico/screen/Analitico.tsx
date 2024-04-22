@@ -1,14 +1,17 @@
 import React from "react";
 import { SafeAreaView, ScrollView, Text, View } from "react-native";
 import { ButtonGroup } from "@rneui/themed";
+
+import LineChart from "../../../components/Charts/LineChart";
+import CalendarHeatmap from "../../../components/Charts/CalendarHeatmap";
+
+import WalletCard from "../components/WalletCard/WalletCard";
+import TotalExpensesCard from "../components/TotalExpensesCard/TotalExpensesCard";
+import ExpensesCategory from "../components/ExpensesCategory/ExpensesCategory";
+
 import { styles } from "./analitico.style";
 import { theme } from "../../../theme/theme";
 import { type ChartData } from "../../../interfaces/chartData";
-import LineChart from "../../../components/Charts/LineChart";
-import WalletCard from "../components/WalletCard/WalletCard";
-import CalendarHeatmap from "../../../components/Charts/CalendarHeatmap";
-import TotalExpensesCard from "../components/TotalExpensesCard/TotalExpensesCard";
-import ExpensesCategory from "../components/ExpensesCategory/ExpensesCategory";
 import data from "../../../data/analitcs.json";
 import expensesData from "../../../data/user_expenses.json";
 
@@ -52,7 +55,7 @@ export default function Analitico() {
 
         <Text style={styles.subtitle}>Mapa de gastos</Text>
         {!!analitcsData && <CalendarHeatmap data={data.expenses} />}
-        <TotalExpensesCard />
+        <TotalExpensesCard money={870.90} creditCard={1859.87} />
 
         <View style={styles.categorie_expenses}>
           <Text style={styles.subtitle}>Gastos por categoria</Text>

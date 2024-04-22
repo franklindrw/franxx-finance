@@ -7,12 +7,9 @@ import { typeValueEnum } from "../../../../enums/enums";
 import { categoryIcons, type CategoryIcons } from "../../../../utils/categoryIcons";
 import { CircleHelp } from 'lucide-react-native';
 
-const data = require('../../../../data/recent_activity.json');
-
 interface ActivityCardProps {
   id: string;
   name: string;
-  description: string;
   date: string;
   value: number;
   type: string;
@@ -25,7 +22,7 @@ const ActivityCard: React.FC<ActivityCardProps> = React.memo(({ id, name, date, 
   return (
     <View style={styles.item_container} key={id}>
       <View style={styles.item_row}>
-        <View style={styles.item_icon}>
+        <View style={styles.item_icon} testID="category-icon">
           {!!Icon && <Icon size={24} color='white' />}
         </View>
         <View>
@@ -41,7 +38,7 @@ const ActivityCard: React.FC<ActivityCardProps> = React.memo(({ id, name, date, 
   );
 });
 
-export default function ActivityList() {
+export default function ActivityList({ data }: { data: ActivityCardProps[] }) {
   return (
     <View style={styles.root}>
       <FlatList

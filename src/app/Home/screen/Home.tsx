@@ -8,6 +8,8 @@ import ActivityList from "../components/ActivityList/ActivityList";
 import TransactionModal from "../components/TransactionModal/TransactionModal";
 import TransactionButton from "../components/TransactionButton/TransactionButton";
 
+const data = require('../../../data/recent_activity.json');
+
 export default function Home() {
   const [openModal, setOpenModal] = React.useState(false);
   const [transactionType, setTransactionType] = React.useState("");
@@ -56,7 +58,7 @@ export default function Home() {
         />
       </View>
 
-      <ActivityList />
+      <ActivityList data={data} />
 
       <TransactionModal onOpen={openModal} onClose={handleCloseModal} type={transactionType} />
     </SafeAreaView>

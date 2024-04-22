@@ -9,15 +9,17 @@ interface ButtonProps {
   variant?: "solid" | "outline" | "ghost" | "link";
   color?: string;
   onPress?: () => void;
+  testID?: string;
 }
 
-export default function Button({ label, width, variant, color = theme.colors.secondary, onPress }: ButtonProps) {
+export default function Button({ label, width, variant, color = theme.colors.secondary, onPress, testID }: ButtonProps) {
   return (
     <TouchableOpacity
       /* @ts-ignore */
       style={[styles.root, { width: width, backgroundColor: color }]}
       onPress={onPress}
       activeOpacity={0.7}
+      testID={testID}
     >
       <View style={styles.container}>
         <Text style={styles.label}>

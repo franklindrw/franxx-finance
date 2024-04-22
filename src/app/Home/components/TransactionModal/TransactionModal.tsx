@@ -69,10 +69,10 @@ export default function TransactionModal({ onOpen, onClose, type }: TransactionM
       visible={onOpen}
       onRequestClose={onClose}
     >
-      <View style={styles.modal_container}>
+      <View style={styles.modal_container} testID="modal">
         <View style={styles.modal_header}>
           <Text style={styles.title}>Adicionar {type}</Text>
-          <IconButton icon={<XIcon size={20} color='#0D47A1' />} onPress={handleCloseModal} />
+          <IconButton icon={<XIcon size={20} color='#0D47A1' />} onPress={handleCloseModal} testID="close-button" />
         </View>
 
         <View style={styles.inputs_container}>
@@ -106,7 +106,13 @@ export default function TransactionModal({ onOpen, onClose, type }: TransactionM
           </View>
         </View>
 
-        <Button label="Adicionar" width="80%" color={theme.colors.backgroud} onPress={handleSubmit(onSubmit)} />
+        <Button
+          width="80%"
+          label="Adicionar"
+          color={theme.colors.backgroud}
+          onPress={handleSubmit(onSubmit)}
+          testID="submit-button"
+        />
       </View>
     </Modal>
   );

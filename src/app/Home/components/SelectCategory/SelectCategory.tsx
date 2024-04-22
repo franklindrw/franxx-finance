@@ -22,7 +22,12 @@ const CategoryCard = ({ name, category, onPress, active = false }: CategoryCardP
   const Icon = categoryIcons[category as CategoryIcons] ?? CircleHelp;
 
   return (
-    <TouchableOpacity disabled={active} onPress={() => onPress(name ?? "")} style={[styles.card_container, active && styles.card_active]}>
+    <TouchableOpacity
+      testID={`category-${name}`}
+      disabled={active}
+      onPress={() => onPress(name ?? "")}
+      style={[styles.card_container, active && styles.card_active]}
+    >
       <Icon size={24} color={active ? 'white' : '#0D47A1'} />
       <Text style={[styles.card_title, active && styles.title_active]}>{name}</Text>
     </TouchableOpacity>
