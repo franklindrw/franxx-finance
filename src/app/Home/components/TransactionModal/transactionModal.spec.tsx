@@ -1,7 +1,9 @@
 import React from "react";
-import { fireEvent, render, waitFor } from "@testing-library/react-native";
+import { fireEvent, render, waitFor, act } from "@testing-library/react-native";
 
 import TransactionModal from "./TransactionModal";
+
+jest.spyOn(console, 'warn').mockImplementation(() => {});
 
 describe("TransactionModal", () => {
   it("should render correctly", () => {
@@ -44,20 +46,22 @@ describe("TransactionModal", () => {
 
     const logSpy = jest.spyOn(console, 'log');
   
-    fireEvent.changeText(descriptionInput, 'Test description');
-    fireEvent.changeText(valueInput, 'R$ 100,00');
-    fireEvent.press(submitButton);
+    await act(async () => {
+      fireEvent.changeText(descriptionInput, 'Test description');
+      fireEvent.changeText(valueInput, 'R$ 100,00');
+      fireEvent.press(getByTestId('category-Invest'));
+      fireEvent.press(submitButton);
+    });
   
     await waitFor(() => {
       expect(mockOnClose).toHaveBeenCalled();
-    });
-  
-    expect(logSpy).toHaveBeenCalledWith({
-      description: 'Test description',
-      value: 100,
-      category: undefined,
-      date: '2024-04-22',
-      type: 'receita'
+      expect(logSpy).toHaveBeenCalledWith({
+        description: 'Test description',
+        value: 100,
+        category: "Invest",
+        date: '2024-04-22',
+        type: 'receita'
+      });
     });
 
     logSpy.mockRestore();
