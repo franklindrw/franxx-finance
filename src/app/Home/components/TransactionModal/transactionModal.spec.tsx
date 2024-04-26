@@ -38,6 +38,7 @@ describe("TransactionModal", () => {
 
   it("should call onSubmit when form is submitted", async () => {
     const mockOnClose = jest.fn();
+
     const { getByTestId, getByPlaceholderText } = render(<TransactionModal onOpen={true} onClose={mockOnClose} type="receita" />);
   
     const descriptionInput = getByPlaceholderText('Digite uma descrição');
@@ -59,7 +60,7 @@ describe("TransactionModal", () => {
         description: 'Test description',
         value: 100,
         category: "Invest",
-        date: '2024-04-22',
+        date: new Date().toISOString().split('T')[0],
         type: 'receita'
       });
     });
