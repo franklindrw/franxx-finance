@@ -7,7 +7,7 @@ import { theme } from "../theme/theme";
 
 import Home from "../app/Home/screen/Home";
 import Analitico from "../app/Analitico/screen/Analitico";
-import Historico from "../app/Historico/Historico";
+import Historico from "../app/Historico/screen/Historico";
 import User from "../app/User/User";
 
 const Tab = createBottomTabNavigator();
