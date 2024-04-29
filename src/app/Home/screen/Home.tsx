@@ -4,7 +4,7 @@ import { styles } from "./home.style";
 import { theme } from "../../../theme/theme";
 
 import Heading from "../components/Heading/Heading";
-import ActivityList from "../components/ActivityList/ActivityList";
+import ActivityList from "../../../components/ActivityList/ActivityList";
 import TransactionModal from "../components/TransactionModal/TransactionModal";
 import TransactionButton from "../components/TransactionButton/TransactionButton";
 
@@ -58,7 +58,7 @@ export default function Home() {
         />
       </View>
 
-      <ActivityList data={data} />
+      <ActivityList data={data} title="Atividades Recentes" />
 
       <TransactionModal onOpen={openModal} onClose={handleCloseModal} type={transactionType} />
     </SafeAreaView>

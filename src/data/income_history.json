@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "name": "Dividendos ITUB4",
+    "category": "dinheiro",
+    "value": 35.40,
+    "date": "2024-04-26",
+    "type": "dinheiro"
+  },
+  {
+    "id": 2,
+    "name": "Salário Mensal",
+    "category": "trabalho",
+    "value": 8500.00,
+    "date": "2024-04-20",
+    "type": "dinheiro"
+  },
+  {
+    "id": 3,
+    "name": "Emprestimo Amigo",
+    "category": "dirty",
+    "value": 250.00,
+    "date": "2024-04-20",
+    "type": "dinheiro"
+  },
+  {
+    "id": 4,
+    "name": "Site de Marketing",
+    "category": "trabalho",
+    "value": 1500.00,
+    "date": "2024-04-18",
+    "type": "dinheiro"
+  },
+  {
+    "id": 5,
+    "name": "Manutenção em servidor",
+    "category": "extra",
+    "value": 650.00,
+    "date": "2024-04-10",
+    "type": "dinheiro"
+  },
+  {
+    "id": 6,
+    "name": "Adiantamento Salárial",
+    "category": "trabalho",
+    "value": 50.00,
+    "date": "2024-04-05",
+    "type": "dinheiro"
+  },
+  {
+    "id": 7,
+    "name": "Dividendos TGAR11",
+    "category": "dinheiro",
+    "value": 135.00,
+    "date": "2024-03-29",
+    "type": "dinheiro"
+  },
+  {
+    "id": 8,
+    "name": "Dividendos VGIR11",
+    "category": "dinheiro",
+    "value": 35.00,
+    "date": "2024-03-25",
+    "type": "dinheiro"
+  },
+  {
+    "id": 9,
+    "name": "Dividendos KLBN11",
+    "category": "dinheiro",
+    "value": 123.00,
+    "date": "2024-03-25",
+    "type": "dinheiro"
+  },
+  {
+    "id": 10,
+    "name": "Dividendos KNCR11",
+    "category": "dinheiro",
+    "value": 28.00,
+    "date": "2024-03-25",
+    "type": "dinheiro"
+  },
+  {
+    "id": 11,
+    "name": "Dividendos BBAS3",
+    "category": "dinheiro",
+    "value": 14.00,
+    "date": "2024-03-25",
+    "type": "dinheiro"
+  },
+  {
+    "id": 12,
+    "name": "Dividendos TIMS3",
+    "category": "dinheiro",
+    "value": 5.30,
+    "date": "2024-03-25",
+    "type": "dinheiro"
+  },
+  {
+    "id": 13,
+    "name": "Dividendos ITUB4",
+    "category": "dinheiro",
+    "value": 35.40,
+    "date": "2024-03-25",
+    "type": "dinheiro"
+  },
+  {
+    "id": 14,
+    "name": "Salário Mensal",
+    "category": "trabalho",
+    "value": 8500.00,
+    "date": "2024-03-20",
+    "type": "dinheiro"
+  },
+  {
+    "id": 15,
+    "name": "Emprestimo Amigo",
+    "category": "dirty",
+    "value": 250.00,
+    "date": "2024-03-20",
+    "type": "dinheiro"
+  },
+  {
+    "id": 16,
+    "name": "Site de Marketing",
+    "category": "trabalho",
+    "value": 1500.00,
+    "date": "2024-03-18",
+    "type": "dinheiro"
+  },
+  {
+    "id": 17,
+    "name": "Manutenção em servidor",
+    "category": "extra",
+    "value": 650.00,
+    "date": "2024-03-10",
+    "type": "dinheiro"
+  },
+  {
+    "id": 18,
+    "name": "Adiantamento Salárial",
+    "category": "trabalho",
+    "value": 50.00,
+    "date": "2024-03-05",
+    "type": "dinheiro"
+  },
+  {
+    "id": 19,
+    "name": "Dividendos TGAR11",
+    "category": "dinheiro",
+    "value": 135.00,
+    "date": "2024-02-29",
+    "type": "dinheiro"
+  },
+  {
+    "id": 20,
+    "name": "Dividendos VGIR11",
+    "category": "dinheiro",
+    "value": 35.00,
+    "date": "2024-02-25",
+    "type": "dinheiro"
+  }
+]

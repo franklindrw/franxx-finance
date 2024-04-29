@@ -2,14 +2,17 @@ import React from "react";
 import { SafeAreaView, View, Text, useWindowDimensions } from "react-native";
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 
-import { styles } from "./historico.style";
+import ActivityList from "../../../components/ActivityList/ActivityList";
 
-import IncomeTab from "../components/IncomeTab";
-import ExpenseTab from "../components/ExpenseTab";
+import { styles } from "./historico.style";
+import { theme } from "../../../theme/theme";
+
+const incomeData = require('../../../data/income_history.json');
+const expenseData = require('../../../data/expenses_history.json');
 
 const renderScene = SceneMap({
-  income: IncomeTab,
-  expense: ExpenseTab,
+  income: () => <ActivityList data={incomeData} />,
+  expense: () => <ActivityList data={expenseData} />,
 });
 
 export default function Historico() {
@@ -24,10 +27,9 @@ export default function Historico() {
   const renderTabBar = (props: any) => (
     <TabBar
       {...props}
-      indicatorStyle={{ backgroundColor: 'transparent' }}
-      style={{ backgroundColor: 'transparent' }}
-      pressColor="transparent"
-      pressOpacity={0.8}
+      indicatorStyle={{ backgroundColor: theme.colors.backgroud }}
+      style={{ backgroundColor: theme.colors.backgroud }}
+      pressOpacity={1}
       renderLabel={({ route, focused }) => (
         <View style={[styles.label_container, focused && styles.label_container_active]}>
           <Text style={[styles.tab_label, focused && styles.tab_label_active]}>
@@ -50,7 +52,6 @@ export default function Historico() {
         renderScene={renderScene}
         onIndexChange={setIndex}
         initialLayout={{ width: layout.width }}
-        lazy
       />
     </SafeAreaView>
   );
