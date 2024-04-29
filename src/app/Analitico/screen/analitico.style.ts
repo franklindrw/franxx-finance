@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
   subtitle: {
     width: "100%",
     fontFamily: theme.font_family.semiBold,
-    fontSize: theme.font_size.lg,
+    fontSize: theme.font_size.md,
     color: theme.colors.white,
     paddingHorizontal: theme.sizes.md,
     paddingVertical: theme.sizes.xs,

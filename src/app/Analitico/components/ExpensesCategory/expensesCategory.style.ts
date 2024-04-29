@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
   },
   category_text: {
     fontFamily: theme.font_family.medium,
-    fontSize: theme.font_size.md,
+    fontSize: theme.font_size.sm,
     color: theme.colors.white,
     marginTop: theme.sizes.xs,
   },
@@ -27,12 +27,12 @@ export const styles = StyleSheet.create({
   },
   percentage_value: {
     fontFamily: theme.font_family.regular,
-    fontSize: theme.font_size.lg,
+    fontSize: theme.font_size.md,
     color: theme.colors.white,
   },
   money_value: {
     fontFamily: theme.font_family.semiBold,
-    fontSize: theme.font_size.xl,
+    fontSize: theme.font_size.lg,
     color: theme.colors.white,
   }
 });

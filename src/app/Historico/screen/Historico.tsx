@@ -52,6 +52,7 @@ export default function Historico() {
         renderScene={renderScene}
         onIndexChange={setIndex}
         initialLayout={{ width: layout.width }}
+        lazy
       />
     </SafeAreaView>
   );

@@ -17,7 +17,7 @@ export default function ExpensesCategory({ category, expense_total, percentage }
   return (
     <View style={styles.root}>
       <View style={styles.category_div}>
-        <Icon color='white' size={32} />
+        <Icon color='white' size={28} />
         <Text style={styles.category_text}>{category}</Text>
       </View>
 
