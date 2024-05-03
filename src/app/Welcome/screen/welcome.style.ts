@@ -4,7 +4,6 @@ import { theme } from '../../../theme/theme';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: '100%',
     backgroundColor: theme.colors.backgroud,
     alignItems: 'center',
     justifyContent: 'center',
@@ -30,6 +29,7 @@ export const styles = StyleSheet.create({
     fontSize: theme.font_size.md, 
     color: theme.colors.primary,
     paddingHorizontal: 25,
+    marginBottom: 20,
   },
   image: {
     width: 280,

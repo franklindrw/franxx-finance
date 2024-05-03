@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     borderRadius: 50,
     backgroundColor: theme.colors.backgroud,
     elevation: 5,
-    marginVertical: 20,
+    marginVertical: 10,
     shadowColor: theme.colors.black,
     shadowOffset: {
       width: 0,

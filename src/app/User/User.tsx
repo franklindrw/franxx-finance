@@ -8,8 +8,13 @@ import NavButton from "../../components/Navbutton/NavButton";
 
 import { styles } from "./user.style";
 
-export default function User() {
+export default function User({ navigation }: { navigation: any }) {
   let version = DeviceInfo.getVersion();
+
+  const handleLogout = () => {
+    // Navigate to Login screen
+    navigation.navigate("Welcome");
+  };
 
   return (
     <SafeAreaView style={styles.root}>
@@ -26,7 +31,7 @@ export default function User() {
       </View>
 
       <View style={styles.footer}>
-        <NavButton text="Sair" Icon={LogOut} />
+        <NavButton text="Sair" Icon={LogOut} onPress={handleLogout} />
       </View>
     </SafeAreaView>
   );
