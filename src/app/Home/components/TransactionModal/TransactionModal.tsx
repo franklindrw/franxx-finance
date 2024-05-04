@@ -109,7 +109,7 @@ export default function TransactionModal({ onOpen, onClose, type }: TransactionM
         <Button
           width="80%"
           label="Adicionar"
-          color={theme.colors.backgroud}
+          color={theme.colors.background}
           onPress={handleSubmit(onSubmit)}
           testID="submit-button"
         />

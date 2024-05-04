@@ -1,6 +1,6 @@
 export const theme = {
   colors: {
-    backgroud: '#5A9BFF',
+    background: '#5A9BFF',
     background_dark: 'rgba(13, 71, 161, 0.35)',
     background_xdark: 'rgba(13, 71, 161, 0.80)',
     background_light: 'rgba(250, 250, 250, 0.75)',

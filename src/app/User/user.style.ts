@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
   root: {
     flex: 1,
     justifyContent: "space-between",
-    backgroundColor: theme.colors.backgroud,
+    backgroundColor: theme.colors.background,
   },
   title_container: {
     padding: theme.sizes.md,

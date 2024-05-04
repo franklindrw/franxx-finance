@@ -5,7 +5,7 @@ import { theme } from "../../theme/theme";
 export const styles = StyleSheet.create({
   root: {
     borderRadius: 50,
-    backgroundColor: theme.colors.backgroud,
+    backgroundColor: theme.colors.background,
     elevation: 5,
     marginVertical: 10,
     shadowColor: theme.colors.black,

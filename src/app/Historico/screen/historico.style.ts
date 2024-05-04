@@ -4,7 +4,7 @@ import { theme } from '../../../theme/theme';
 export const styles = StyleSheet.create({
   root: {
     flex: 1,
-    backgroundColor: theme.colors.backgroud,
+    backgroundColor: theme.colors.background,
   },
   title_container: {
     flexDirection: 'row',

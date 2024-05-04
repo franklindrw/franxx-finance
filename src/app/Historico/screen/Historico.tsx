@@ -27,8 +27,8 @@ export default function Historico() {
   const renderTabBar = (props: any) => (
     <TabBar
       {...props}
-      indicatorStyle={{ backgroundColor: theme.colors.backgroud }}
-      style={{ backgroundColor: theme.colors.backgroud }}
+      indicatorStyle={{ backgroundColor: theme.colors.background }}
+      style={{ backgroundColor: theme.colors.background }}
       pressOpacity={1}
       renderLabel={({ route, focused }) => (
         <View style={[styles.label_container, focused && styles.label_container_active]}>
