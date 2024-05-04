@@ -1,29 +1,27 @@
 import React from "react";
-import { SafeAreaView, Text, Image, View } from "react-native";
+import { SafeAreaView, Text, Image } from "react-native";
+
 import { styles } from "./welcome.style";
+
 import Button from "../../../components/Button/Button";
+import HeaderTitle from "../../../components/HeaderTitle/HeaderTitle";
 
 const logoImg = require('../../../../assets/logo.jpg');
 
 export default function Welcome({ navigation }: { navigation: any }) {
-
+  // navega para tela de login
   const handleLogin = () => {
-    // Navigate to Login screen
     navigation.navigate("Login");
   }
   
+  // navega para tela de cadastro
   const handleRegister = () => {
-    // Navigate to Register screen
     navigation.navigate("Register");
   }
 
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        <Text style={styles.titlePrimary}>Franxx</Text>
-        <Text style={styles.titleSecondary}>Finance</Text>
-        <Text style={styles.subtitle}>Controle Financeiro Pessoal</Text>
-      </View>
+      <HeaderTitle />
 
       <Image
         source={logoImg}
