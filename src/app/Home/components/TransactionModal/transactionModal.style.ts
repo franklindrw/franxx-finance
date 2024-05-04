@@ -8,7 +8,6 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: theme.sizes.lg,
-    marginTop: theme.sizes.xxl,
   },
   inputs_container: {
     width: "100%",

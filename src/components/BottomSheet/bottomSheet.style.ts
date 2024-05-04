@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
-    height: '80%',
+    height: '75%',
     paddingBottom: theme.sizes.xl,
     width: '100%',
   },
@@ -24,8 +24,7 @@ export const styles = StyleSheet.create({
   },
   content: {
     width: '100%',
-    height: '80%',
-    justifyContent: 'center',
+    height: '100%',
     alignItems: 'center',
   },
 })
