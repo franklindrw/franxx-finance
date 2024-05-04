@@ -4,15 +4,28 @@ import DeviceInfo from "react-native-device-info";
 import { Avatar } from '@rneui/themed';
 import { User2Icon, FileText, CircleX, LogOut } from 'lucide-react-native'
 
-import NavButton from "../../components/Navbutton/NavButton";
-
 import { styles } from "./user.style";
 
+import NavButton from "../../components/Navbutton/NavButton";
+import BottomSheet from "../../components/BottomSheet";
+import PrivacityPolicy from "../../components/PrivacityPolice/PrivacityPolicy";
+
 export default function User({ navigation }: { navigation: any }) {
+  const [modalVisible, setModalVisible] = React.useState(false);
   let version = DeviceInfo.getVersion();
 
+  // acao para abrir modal
+  const handleOpenModal = () => {
+    setModalVisible(!modalVisible);
+  };
+
+  // acao para fechar modal
+  const handleCloseModal = () => {
+    setModalVisible(!modalVisible);
+  };
+
+  // Navigate to Login screen
   const handleLogout = () => {
-    // Navigate to Login screen
     navigation.navigate("Welcome");
   };
 
@@ -25,7 +38,7 @@ export default function User({ navigation }: { navigation: any }) {
       
         <View style={styles.menuContainer}>
           <NavButton text="Meus dados" Icon={User2Icon} />
-          <NavButton text="Termos de uso" Icon={FileText} />
+          <NavButton text="Política de Privacidade" Icon={FileText} onPress={handleOpenModal} />
           <NavButton text="Encerrar conta" Icon={CircleX} />
         </View>
       </View>
@@ -33,6 +46,15 @@ export default function User({ navigation }: { navigation: any }) {
       <View style={styles.footer}>
         <NavButton text="Sair" Icon={LogOut} onPress={handleLogout} />
       </View>
+
+      <BottomSheet.Root
+        onOpen={modalVisible}
+        onClose={handleCloseModal}
+      >
+        <BottomSheet.Scroll>
+          <PrivacityPolicy />
+        </BottomSheet.Scroll>
+      </BottomSheet.Root>
     </SafeAreaView>
   );
 };
