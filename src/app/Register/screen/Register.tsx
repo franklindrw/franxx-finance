@@ -9,6 +9,7 @@ import HeaderTitle from '../../../components/HeaderTitle/HeaderTitle'
 import TextField from '../../../components/TextField'
 import Button from '../../../components/Button/Button'
 import PrivacityPolicy from '../../../components/PrivacityPolice/PrivacityPolicy'
+import BottomSheet from '../../../components/BottomSheet'
 
 export default function Register({ navigation }: { navigation: any }) {
   const [isChecked, setIsChecked] = React.useState(false);
@@ -112,7 +113,14 @@ export default function Register({ navigation }: { navigation: any }) {
         <Text style={styles.hyperlink}>Já é cadastrado? clique aqui!</Text>
       </TouchableOpacity>
 
-      <PrivacityPolicy onOpen={modalVisible} onClose={handleCloseModal} />
+      <BottomSheet.Root
+        onOpen={modalVisible}
+        onClose={handleCloseModal}
+      >
+        <BottomSheet.Scroll>
+          <PrivacityPolicy />
+        </BottomSheet.Scroll>
+      </BottomSheet.Root>
     </SafeAreaView>
   )
 }
