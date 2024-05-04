@@ -30,6 +30,7 @@ export default function Historico() {
       indicatorStyle={{ backgroundColor: theme.colors.background }}
       style={{ backgroundColor: theme.colors.background }}
       pressOpacity={1}
+      pressColor="transparent"
       renderLabel={({ route, focused }) => (
         <View style={[styles.label_container, focused && styles.label_container_active]}>
           <Text style={[styles.tab_label, focused && styles.tab_label_active]}>

@@ -20,15 +20,15 @@ export const styles = StyleSheet.create({
     marginTop: theme.sizes.lg,
     backgroundColor: theme.colors.white,
     paddingHorizontal: theme.sizes.lg,
-    paddingVertical: theme.sizes.xl,
+    paddingVertical: theme.sizes.lg,
     borderRadius: theme.sizes.md,
-    marginVertical: theme.sizes.xl,
+    marginVertical: theme.sizes.md,
     gap: theme.sizes.xs,
   },
   buttonDiv: {
     width: "100%",
     alignItems: "center",
-    marginBottom: theme.sizes.lg,
+    marginBottom: theme.sizes.sm,
   },
   hyperlink: {
     color: theme.colors.white,
