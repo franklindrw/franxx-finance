@@ -40,6 +40,7 @@ export default function Login({ navigation }: { navigation: any }) {
         <TextField.Root>
           <TextField.Label label='E-mail' />
           <TextField.InputText
+            keyboardType='email-address'
             onChangeText={(text) => setValue("email", text)}
             placeholder='Digite seu e-mail'
           />
@@ -48,7 +49,6 @@ export default function Login({ navigation }: { navigation: any }) {
         <TextField.Root>
           <TextField.Label label='Senha' />
           <TextField.InputText
-            keyboardType='email-address'
             onChangeText={(text) => setValue("password", text)}
             placeholder='Digite sua senha'
             secureTextEntry
