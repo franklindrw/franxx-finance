@@ -34,6 +34,11 @@ export default function Register({ navigation }: { navigation: any }) {
     setModalVisible(!modalVisible);
   }
 
+  // fecha modal de termos de uso
+  const handleCloseModal = () => {
+    setModalVisible(!modalVisible);
+  }
+
   // valida o login e navega para a tela principal
   const onSubmit = (data: any) => {
     console.log(data);
@@ -94,7 +99,7 @@ export default function Register({ navigation }: { navigation: any }) {
           />
 
           <TouchableOpacity onPress={handleOpenModal}>
-            <Text style={styles.acceptText}>Li e aceito os termos de uso</Text>
+            <Text style={styles.acceptText}>Li e aceito a política de Privacidade</Text>
           </TouchableOpacity>
         </View>
 
@@ -107,7 +112,7 @@ export default function Register({ navigation }: { navigation: any }) {
         <Text style={styles.hyperlink}>Já é cadastrado? clique aqui!</Text>
       </TouchableOpacity>
 
-      <PrivacityPolicy onOpen={modalVisible} />
+      <PrivacityPolicy onOpen={modalVisible} onClose={handleCloseModal} />
     </SafeAreaView>
   )
 }
