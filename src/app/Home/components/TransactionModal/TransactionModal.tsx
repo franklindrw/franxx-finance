@@ -12,6 +12,7 @@ import transactionData from "../../../../data/transaction_categories.json";
 import DatePicker from "../../../../infra/DatePicker/DatePicker";
 import { moneyToNumber } from "../../../../utils/numberToReal";
 import { theme } from "../../../../theme/theme";
+import BottomSheet from "../../../../components/BottomSheet";
 
 interface TransactionModalProps {
   type: string;
@@ -63,16 +64,13 @@ export default function TransactionModal({ onOpen, onClose, type }: TransactionM
   }
 
   return (
-    <Modal
-      animationType="slide"
-      transparent={true}
-      visible={onOpen}
-      onRequestClose={onClose}
+    <BottomSheet.Root
+      onOpen={onOpen}
+      onClose={handleCloseModal}
     >
-      <View style={styles.modal_container} testID="modal">
+      <BottomSheet.Container>
         <View style={styles.modal_header}>
           <Text style={styles.title}>Adicionar {type}</Text>
-          <IconButton icon={<XIcon size={20} color='#0D47A1' />} onPress={handleCloseModal} testID="close-button" />
         </View>
 
         <View style={styles.inputs_container}>
@@ -113,7 +111,7 @@ export default function TransactionModal({ onOpen, onClose, type }: TransactionM
           onPress={handleSubmit(onSubmit)}
           testID="submit-button"
         />
-      </View>
-    </Modal>
+      </BottomSheet.Container>
+    </BottomSheet.Root>
   );
 }
