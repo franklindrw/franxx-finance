@@ -29,6 +29,11 @@ export default function User({ navigation }: { navigation: any }) {
     navigation.navigate("Welcome");
   };
 
+  // navega para tela de meus dados
+  const handleMyData = () => {
+    navigation.navigate("MyDetails");
+  };
+
   // navega para tela de excluir conta
   const handleDeleteAccount = () => {
     navigation.navigate("Unsubscribe");
@@ -42,7 +47,7 @@ export default function User({ navigation }: { navigation: any }) {
         <Text style={styles.version_text}>v {version}</Text>
       
         <View style={styles.menuContainer}>
-          <NavButton text="Meus dados" Icon={User2Icon} />
+          <NavButton text="Meus dados" Icon={User2Icon} onPress={handleMyData} />
           <NavButton text="Política de Privacidade" Icon={FileText} onPress={handleOpenModal} />
           <NavButton text="Cancelar inscrição" Icon={CircleX} onPress={handleDeleteAccount} />
         </View>

@@ -17,7 +17,10 @@ export default function Register({ navigation }: { navigation: any }) {
   const { register, setValue, handleSubmit } = useForm();
 
   React.useEffect(() => {
+    register("name");
     register("email");
+    register("password");
+    register("pass");
   }, [register]);
 
   // navega para tela de cadastro
@@ -41,10 +44,10 @@ export default function Register({ navigation }: { navigation: any }) {
   }
 
   // valida o login e navega para a tela principal
-  const onSubmit = (data: any) => {
-    console.log(data);
-    navigation.navigate("Main");
-  }
+  const onSubmit = handleSubmit((data: any) => {
+    console.log(data)
+    navigation.navigate("Main")
+  })
 
   return (
     <SafeAreaView style={styles.root}>
@@ -59,7 +62,7 @@ export default function Register({ navigation }: { navigation: any }) {
         <TextField.Root>
           <TextField.Label label='Nome' />
           <TextField.InputText
-            onChangeText={(text) => setValue("email", text)}
+            onChangeText={(text) => setValue("name", text)}
             placeholder='Digite seu nome completo'
           />
         </TextField.Root>
@@ -104,7 +107,7 @@ export default function Register({ navigation }: { navigation: any }) {
           </TouchableOpacity>
         </View>
 
-        <Button contentStyles={styles.button} onPress={handleSubmit(onSubmit)} label='Cadastrar'  />
+        <Button contentStyles={styles.button} onPress={onSubmit} label='Cadastrar'  />
       </KeyboardAvoidingView>
 
       <TouchableOpacity onPress={handleLogin}>

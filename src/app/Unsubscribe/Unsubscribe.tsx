@@ -23,11 +23,11 @@ export default function Shutdown({ navigation }: { navigation: any }) {
   return (
     <SafeAreaView style={styles.root}>
       <NavButton
-          contentStyles={{ width: '100%' }}
-          Icon={ChevronLeft}
-          text='voltar'
-          onPress={goBack}
-          textStyles={{ fontSize: 16 }}
+        contentStyles={{ width: '100%' }}
+        Icon={ChevronLeft}
+        text='voltar'
+        onPress={goBack}
+        textStyles={{ fontSize: 16 }}
       />
 
       <View style={styles.container}>

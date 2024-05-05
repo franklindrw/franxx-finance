@@ -7,6 +7,7 @@ import Login from "../app/Login/screen/Login";
 import Register from "../app/Register/screen/Register";
 import MainTabNavigator from "./MainTabNavigator";
 import Unsubscribe from "../app/Unsubscribe/Unsubscribe";
+import MyDetails from "../app/MyDetails/screen/MyDetails";
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,7 @@ export default function Routes() {
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="Main" component={MainTabNavigator} />
         <Stack.Screen name="Unsubscribe" component={Unsubscribe} />
+        <Stack.Screen name="MyDetails" component={MyDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );

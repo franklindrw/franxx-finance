@@ -22,10 +22,10 @@ export default function Login({ navigation }: { navigation: any }) {
   }
 
   // valida o login e navega para a tela principal
-  const onSubmit = (data: any) => {
-    console.log(data);
-    navigation.navigate("Main");
-  }
+  const onSubmit = handleSubmit((data: any) => {
+    console.log(data)
+    navigation.navigate("Main")
+  })
 
   return (
     <SafeAreaView style={styles.root}>
@@ -55,7 +55,7 @@ export default function Login({ navigation }: { navigation: any }) {
           />
         </TextField.Root>
 
-        <Button contentStyles={styles.button} onPress={handleSubmit(onSubmit)} label='Entrar'  />
+        <Button contentStyles={styles.button} onPress={onSubmit} label='Entrar'  />
       </KeyboardAvoidingView>
 
       <TouchableOpacity onPress={handleRegister}>

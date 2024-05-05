@@ -12,13 +12,11 @@ import { styles } from "./button.style"
 import { theme } from "../../theme/theme"
 
 interface ButtonProps {
-  label: string
-  textStyles?: StyleProp<TextStyle>
   contentStyles?: StyleProp<ViewStyle>
-  width?: number | string
-  color?: string
+  label: string
   onPress?: () => void
   testID?: string
+  textStyles?: StyleProp<TextStyle>
 }
 
 export default function Button({
