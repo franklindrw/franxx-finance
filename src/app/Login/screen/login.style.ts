@@ -25,9 +25,9 @@ export const styles = StyleSheet.create({
     marginVertical: theme.sizes.xl,
     gap: theme.sizes.lg,
   },
-  buttonDiv: {
-    width: "100%",
-    alignItems: "center",
+  button: {
+    width: "80%",
+    backgroundColor: theme.colors.secondary,
     marginBottom: theme.sizes.xl,
   },
   hyperlink: {

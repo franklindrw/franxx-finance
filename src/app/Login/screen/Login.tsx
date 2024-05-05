@@ -55,9 +55,7 @@ export default function Login({ navigation }: { navigation: any }) {
           />
         </TextField.Root>
 
-        <View style={styles.buttonDiv}>
-          <Button onPress={handleSubmit(onSubmit)} label='Entrar' width='80%'  />
-        </View>
+        <Button contentStyles={styles.button} onPress={handleSubmit(onSubmit)} label='Entrar'  />
       </KeyboardAvoidingView>
 
       <TouchableOpacity onPress={handleRegister}>

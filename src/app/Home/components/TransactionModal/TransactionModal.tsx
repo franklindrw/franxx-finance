@@ -67,6 +67,7 @@ export default function TransactionModal({ onOpen, onClose, type }: TransactionM
     <BottomSheet.Root
       onOpen={onOpen}
       onClose={handleCloseModal}
+      modalStyles={{ height: "70%" }}
     >
       <BottomSheet.Container>
         <View style={styles.modal_header}>
@@ -105,7 +106,7 @@ export default function TransactionModal({ onOpen, onClose, type }: TransactionM
         </View>
 
         <Button
-          width="80%"
+          contentStyles={{ width: "80%" }}
           label="Adicionar"
           color={theme.colors.background}
           onPress={handleSubmit(onSubmit)}

@@ -24,9 +24,14 @@ export default function User({ navigation }: { navigation: any }) {
     setModalVisible(!modalVisible);
   };
 
-  // Navigate to Login screen
+  // navega para tela de boas vindas
   const handleLogout = () => {
     navigation.navigate("Welcome");
+  };
+
+  // navega para tela de excluir conta
+  const handleDeleteAccount = () => {
+    navigation.navigate("Unsubscribe");
   };
 
   return (
@@ -39,7 +44,7 @@ export default function User({ navigation }: { navigation: any }) {
         <View style={styles.menuContainer}>
           <NavButton text="Meus dados" Icon={User2Icon} />
           <NavButton text="Política de Privacidade" Icon={FileText} onPress={handleOpenModal} />
-          <NavButton text="Encerrar conta" Icon={CircleX} />
+          <NavButton text="Cancelar inscrição" Icon={CircleX} onPress={handleDeleteAccount} />
         </View>
       </View>
 

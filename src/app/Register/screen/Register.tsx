@@ -104,9 +104,7 @@ export default function Register({ navigation }: { navigation: any }) {
           </TouchableOpacity>
         </View>
 
-        <View style={styles.buttonDiv}>
-          <Button onPress={handleSubmit(onSubmit)} label='Cadastrar' width='80%'  />
-        </View>
+        <Button contentStyles={styles.button} onPress={handleSubmit(onSubmit)} label='Cadastrar'  />
       </KeyboardAvoidingView>
 
       <TouchableOpacity onPress={handleLogin}>

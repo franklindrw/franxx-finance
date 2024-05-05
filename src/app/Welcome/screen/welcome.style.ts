@@ -19,5 +19,10 @@ export const styles = StyleSheet.create({
     width: 280,
     height: 280,
     marginVertical: 10,
+  },
+  button: {
+    width: '60%',
+    backgroundColor: theme.colors.secondary,
+    paddingHorizontal: theme.sizes.xl,
   }
 });

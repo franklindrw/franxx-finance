@@ -33,8 +33,9 @@ export default function Welcome({ navigation }: { navigation: any }) {
         nosso aplicativo de controle financeiro pessoal.
       </Text>
 
-      <Button label="Entrar" width='60%' onPress={handleLogin} />
-      <Button label="Cadastre-se" width='60%' onPress={handleRegister} />
+      <Button contentStyles={styles.button} label="Entrar" onPress={handleLogin} />
+
+      <Button contentStyles={styles.button} label="Cadastre-se" onPress={handleRegister} />
     </SafeAreaView>
   );
 }

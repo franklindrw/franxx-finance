@@ -13,5 +13,6 @@ export const styles = StyleSheet.create({
     color: "white",
     fontSize: theme.font_size.lg,
     fontFamily: theme.font_family.regular,
+    marginTop: 1,
   }
 });
