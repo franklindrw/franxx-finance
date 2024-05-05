@@ -8,18 +8,19 @@ interface HeadingProps {
   name: string;
   src?: string;
   notifications?: number;
+  userAction?: () => void;
 }
 
-export default function Heading({ name, src, notifications = 0 }: HeadingProps) {
+export default function Heading({ name, src, userAction, notifications = 0 }: HeadingProps) {
   return (
     <View style={styles.header}>
-      <View style={styles.flex_container}>
+      <TouchableOpacity style={styles.flex_container} onPress={userAction}>
         <Avatar size={48} source={{ uri: src }} rounded />
         <View>
           <Text style={styles.subtitle}>Bem vindo,</Text>
           <Text style={styles.title}>{name}</Text>
         </View>
-      </View>
+      </TouchableOpacity>
       <TouchableOpacity>
         {notifications > 0 && (
           <View style={styles.notification}>

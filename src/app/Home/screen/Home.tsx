@@ -10,15 +10,22 @@ import TransactionButton from "../components/TransactionButton/TransactionButton
 
 const data = require('../../../data/recent_activity.json');
 
-export default function Home() {
+export default function Home({ navigation }: { navigation: any }) {
   const [openModal, setOpenModal] = React.useState(false);
   const [transactionType, setTransactionType] = React.useState("");
 
+  // acao para navegar para a tela de perfil
+  const handleNavigateProfile = () => {
+    navigation.navigate("Usuário");
+  }
+
+  // acao para abrir o modal
   const handleOpenModal = (transaction: string) => {
     setTransactionType(transaction);
     setOpenModal(true);
   }
 
+  // acao para fechar o modal
   const handleCloseModal = () => {
     setTransactionType("");
     setOpenModal(false);
@@ -26,7 +33,12 @@ export default function Home() {
 
   return (
     <SafeAreaView style={styles.root}>
-      <Heading name="Franklin Campos" src="https://github.com/franklindrw.png" notifications={0} />
+      <Heading
+        name="Franklin Campos"
+        src="https://github.com/franklindrw.png"
+        notifications={0}
+        userAction={handleNavigateProfile}
+      />
     
       <View style={styles.wallet_container}>
         <Text style={styles.wallet_label}>Carteira Total</Text>
