@@ -1,8 +1,10 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-import { Avatar } from '@rneui/themed';
-import { styles } from "./heading.style";
 import { Bell } from 'lucide-react-native';
+
+import UserAvatar from "../../../../infra/UserAvatar/UserAvatar";
+
+import { styles } from "./heading.style";
 
 interface HeadingProps {
   name: string;
@@ -15,7 +17,11 @@ export default function Heading({ name, src, userAction, notifications = 0 }: He
   return (
     <View style={styles.header}>
       <TouchableOpacity style={styles.flex_container} onPress={userAction}>
-        <Avatar size={48} source={{ uri: src }} rounded />
+        <UserAvatar
+          name='Franklin Almeida Campos'
+          uri='https://github.com/franklindrw.png'
+          size={48}
+        />
         <View>
           <Text style={styles.subtitle}>Bem vindo,</Text>
           <Text style={styles.title}>{name}</Text>

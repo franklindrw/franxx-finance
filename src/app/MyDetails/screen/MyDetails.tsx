@@ -1,7 +1,6 @@
 import React from 'react'
 import { SafeAreaView, View } from 'react-native'
 import { ChevronLeft } from 'lucide-react-native'
-import { Avatar } from '@rneui/themed'
 import { useForm } from 'react-hook-form'
 
 import { styles } from './myDetails.style'
@@ -9,6 +8,7 @@ import { styles } from './myDetails.style'
 import NavButton from '../../../components/Navbutton/NavButton'
 import TextField from '../../../components/TextField';
 import Button from '../../../components/Button/Button'
+import UserAvatar from '../../../infra/UserAvatar/UserAvatar'
 
 export default function MyDetails({ navigation }: { navigation: any }) {
   const { register, setValue, handleSubmit } = useForm()
@@ -40,10 +40,15 @@ export default function MyDetails({ navigation }: { navigation: any }) {
         textStyles={{ fontSize: 16 }}
       />
 
-      <Avatar size={72} source={{ uri: "https://github.com/franklindrw.png" }} rounded />
+      <UserAvatar
+        name='Franklin Almeida Campos'
+        uri='https://github.com/franklindrw.png'
+        size={100}
+        edit
+      />
       
       <View style={styles.container}>
-      <TextField.Root>
+        <TextField.Root>
           <TextField.Label label='Nome' />
           <TextField.InputText
             defaultValue='Franklin Almeida Campos'

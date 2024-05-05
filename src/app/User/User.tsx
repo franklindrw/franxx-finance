@@ -1,7 +1,6 @@
 import React from "react";
 import { SafeAreaView, View, Text } from "react-native";
 import DeviceInfo from "react-native-device-info";
-import { Avatar } from '@rneui/themed';
 import { User2Icon, FileText, CircleX, LogOut } from 'lucide-react-native'
 
 import { styles } from "./user.style";
@@ -9,6 +8,7 @@ import { styles } from "./user.style";
 import NavButton from "../../components/Navbutton/NavButton";
 import BottomSheet from "../../components/BottomSheet";
 import PrivacityPolicy from "../../components/PrivacityPolice/PrivacityPolicy";
+import UserAvatar from "../../infra/UserAvatar/UserAvatar";
 
 export default function User({ navigation }: { navigation: any }) {
   const [modalVisible, setModalVisible] = React.useState(false);
@@ -42,7 +42,11 @@ export default function User({ navigation }: { navigation: any }) {
   return (
     <SafeAreaView style={styles.root}>
       <View style={styles.title_container}>
-        <Avatar size={72} source={{ uri: "https://github.com/franklindrw.png" }} rounded />
+        <UserAvatar
+          name='Franklin Almeida Campos'
+          uri='https://github.com/franklindrw.png'
+          size={100}
+        />
         <Text style={styles.title_text}>Frankin Almeida Campos</Text>
         <Text style={styles.version_text}>v {version}</Text>
       
