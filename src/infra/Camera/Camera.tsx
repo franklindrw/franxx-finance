@@ -1,10 +1,14 @@
 import React from 'react'
-import { View, Alert, StyleSheet, Text } from 'react-native'
+import { View, Alert, StyleSheet, SafeAreaView, Text, TouchableOpacity } from 'react-native'
 import {
   Camera as VisionCamera,
   useCameraDevice,
   useCameraPermission,
 } from 'react-native-vision-camera'
+import { ChevronLeft, SwitchCamera, Zap, ZapOff } from 'lucide-react-native'
+
+import NavButton from '../../components/Navbutton/NavButton'
+
 import { styles } from './camera.style'
 
 interface CameraProps {
@@ -19,6 +23,7 @@ export default function Camera({ navigation }: CameraProps) {
   // NOTE: configuracao de controles da camera
   const [ cameraPosition, setCameraPosition ] = React.useState('front')
   const [ isFlashOn, setIsFlashOn ] = React.useState(false)
+  const FlashIcon = isFlashOn ? Zap : ZapOff
 
   const devices = useCameraDevice("front")
   React.useEffect(() => {
@@ -37,10 +42,12 @@ export default function Camera({ navigation }: CameraProps) {
     })()
   }, [])
 
+  // TODO: acao para trocar a camera
   const handleToggleCamera = () => {
     setCameraPosition(cameraPosition === 'front' ? 'back' : 'front')
   }
 
+  // TODO: acao para ligar/desligar o flash
   const handleToggleFlash = () => {
     if (!devices) return
 
@@ -53,11 +60,21 @@ export default function Camera({ navigation }: CameraProps) {
     setIsFlashOn(!isFlashOn)
   }
 
-    // se nao tiver permissao, retorna null
-    if (!permission || !devices) return (<View><Text>nao abriu</Text></View>)
+  // TODO: acao para fechar a camera
+  const handleCloseCamera = () => {
+    navigation.goBack()
+  }
+
+  // TODO: acao para tirar a foto
+  const handleTakePicture = () => {
+    console.log('tirou foto')
+  }
+
+  // [ ] fazer mensagem de nao foi possivel - se nao tiver permissao, retorna null
+  if (!permission || !devices) return (<View><Text>nao abriu</Text></View>)
 
   return (
-    <View style={styles.root}>
+    <SafeAreaView style={styles.root}>
       <VisionCamera
         style={StyleSheet.absoluteFill}
         device={devices}
@@ -67,6 +84,31 @@ export default function Camera({ navigation }: CameraProps) {
         orientation='portrait'
         resizeMode='cover'
       />
-    </View>
+
+        <NavButton
+          contentStyles={styles.backButton}
+          Icon={ChevronLeft}
+          text='voltar'
+          onPress={handleCloseCamera}
+          textStyles={{ fontSize: 16 }}
+        />
+
+      <View style={styles.optionsContainer}>
+        <TouchableOpacity style={styles.optionButton}>
+          <FlashIcon size={24} color='white' onPress={handleToggleFlash} />
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.optionButton}>
+          <SwitchCamera size={24} color='white' onPress={handleToggleCamera} />
+        </TouchableOpacity>
+      </View>
+
+      <TouchableOpacity
+        style={styles.toggleCamera}
+        onPress={handleTakePicture}
+      >
+        <View style={styles.innerBorder}></View>
+      </TouchableOpacity>
+    </SafeAreaView>
   )
 }
