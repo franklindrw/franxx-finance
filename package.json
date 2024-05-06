@@ -35,7 +35,8 @@
     "react-native-safe-area-context": "4.8.2",
     "react-native-screens": "~3.29.0",
     "react-native-svg": "14.1.0",
-    "react-native-tab-view": "^3.5.2"
+    "react-native-tab-view": "^3.5.2",
+    "react-native-vision-camera": "^4.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

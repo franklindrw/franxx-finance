@@ -42,6 +42,7 @@ export default function MyDetails({ navigation }: { navigation: any }) {
 
       <UserAvatar
         name='Franklin Almeida Campos'
+        navigation={navigation}
         uri='https://github.com/franklindrw.png'
         size={100}
         edit
