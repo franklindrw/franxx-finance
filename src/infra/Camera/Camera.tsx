@@ -1,11 +1,12 @@
 import React from 'react'
-import { View, Alert, StyleSheet, SafeAreaView, Text, TouchableOpacity } from 'react-native'
+import { Alert, Image, Modal, StyleSheet, SafeAreaView, Text, TouchableOpacity, View } from 'react-native'
 import {
   Camera as VisionCamera,
   useCameraDevice,
+  useCameraFormat,
   useCameraPermission,
 } from 'react-native-vision-camera'
-import { ChevronLeft, SwitchCamera, Zap, ZapOff } from 'lucide-react-native'
+import { ChevronLeft, SwitchCamera, Zap, ZapOff, Save, XIcon } from 'lucide-react-native'
 
 import NavButton from '../../components/Navbutton/NavButton'
 
@@ -16,16 +17,27 @@ interface CameraProps {
 }
 
 export default function Camera({ navigation }: CameraProps) {
-  // NOTE: configuracao de permissao da camera
+  // TODO configuracao de permissao da camera
   const { hasPermission, requestPermission } = useCameraPermission()
   const [permission, setPermission] = React.useState<null | boolean>(null)
+  const camera = React.useRef<VisionCamera>(null)
 
-  // NOTE: configuracao de controles da camera
-  const [ cameraPosition, setCameraPosition ] = React.useState('front')
+  // TODO configuracao de controles da camera
+  const [ cameraPosition, setCameraPosition ] = React.useState<"front" | "back">('front')
   const [ isFlashOn, setIsFlashOn ] = React.useState(false)
   const FlashIcon = isFlashOn ? Zap : ZapOff
 
-  const devices = useCameraDevice("front")
+  // TODO armazenamento e preview da foto
+  const [ photoUri, setPhotoUri ] = React.useState<string | null>(null)
+  const [ modalVisible, setModalVisible ] = React.useState(false)
+
+  const devices = useCameraDevice(cameraPosition)
+
+  // TODO configuração do tamanho da foto
+  const format = useCameraFormat(devices, [
+    { photoResolution: { width: 720, height: 720 } }
+  ])
+
   React.useEffect(() => {
     if (hasPermission) {
       setPermission(true)
@@ -42,32 +54,39 @@ export default function Camera({ navigation }: CameraProps) {
     })()
   }, [])
 
-  // TODO: acao para trocar a camera
+  // TODO acao para trocar a camera
   const handleToggleCamera = () => {
     setCameraPosition(cameraPosition === 'front' ? 'back' : 'front')
   }
 
-  // TODO: acao para ligar/desligar o flash
+  // TODO acao para ligar/desligar o flash
   const handleToggleFlash = () => {
     if (!devices) return
 
     // se a camera for frontal, nao tem flash
     if(cameraPosition === 'front') {
-      Alert.alert('Flash indisponível', 'Flash nao disponível na câmera frontal')
+      Alert.alert('Flash indisponível', 'Flash não está disponível na câmera frontal')
       return
     }
 
     setIsFlashOn(!isFlashOn)
   }
 
-  // TODO: acao para fechar a camera
+  // TODO acao para fechar a camera
   const handleCloseCamera = () => {
     navigation.goBack()
   }
 
-  // TODO: acao para tirar a foto
-  const handleTakePicture = () => {
-    console.log('tirou foto')
+  // TODO acao para tirar a foto
+  const handleTakePicture = async () => {
+    if (!camera.current) return
+
+    const photo = await camera.current.takePhoto({
+      flash: isFlashOn ? 'on' : 'off',
+    })
+
+    setPhotoUri(`file://${photo.path}`)
+    setModalVisible(true)
   }
 
   // [ ] fazer mensagem de nao foi possivel - se nao tiver permissao, retorna null
@@ -76,22 +95,23 @@ export default function Camera({ navigation }: CameraProps) {
   return (
     <SafeAreaView style={styles.root}>
       <VisionCamera
-        style={StyleSheet.absoluteFill}
         device={devices}
+        format={format}
         isActive={true}
+        ref={camera}
+        style={StyleSheet.absoluteFill}
         photo={true}
-        torch={isFlashOn ? 'on' : 'off'}
         orientation='portrait'
         resizeMode='cover'
       />
 
-        <NavButton
-          contentStyles={styles.backButton}
-          Icon={ChevronLeft}
-          text='voltar'
-          onPress={handleCloseCamera}
-          textStyles={{ fontSize: 16 }}
-        />
+      <NavButton
+        contentStyles={styles.backButton}
+        Icon={ChevronLeft}
+        text='voltar'
+        onPress={handleCloseCamera}
+        textStyles={{ fontSize: 16 }}
+      />
 
       <View style={styles.optionsContainer}>
         <TouchableOpacity style={styles.optionButton}>
@@ -109,6 +129,31 @@ export default function Camera({ navigation }: CameraProps) {
       >
         <View style={styles.innerBorder}></View>
       </TouchableOpacity>
+
+      {photoUri && (
+        <Modal
+          animationType='slide'
+          transparent={false}
+          visible={modalVisible}
+          onRequestClose={() => setModalVisible(false)}
+        >
+          <View style={styles.modalContent}>
+            <Image source={{ uri: photoUri }} style={{ flex: 1 }} />
+
+            <View style={styles.modalButtons}>
+              <TouchableOpacity style={styles.modalButton}>
+                <XIcon size={24} color='white' />
+                <Text style={styles.modalButtonText}>Fechar</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity style={styles.modalButton}>
+                <Save size={24} color='white' />
+                <Text style={styles.modalButtonText}>Salvar</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
+      )}
     </SafeAreaView>
   )
 }

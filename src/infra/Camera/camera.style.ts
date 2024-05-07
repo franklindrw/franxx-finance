@@ -2,13 +2,44 @@ import { StyleSheet } from "react-native";
 import { theme } from "../../theme/theme";
 
 export const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
   backButton: {
     width: '100%',
+  },
+  innerBorder: {
+    width: 66,
+    height: 66,
+    borderRadius: 99,
+    borderWidth: 4,
+    borderColor: theme.colors.black,
+    backgroundColor: theme.colors.white,
+  },
+  modalContent: {
+    width: '100%',
+    height: '100%',
+  },
+  modalButtons: {
+    bottom: 0,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginBottom: theme.sizes.xxl,
+    position: 'absolute',
+    width: '100%',
+  },
+  modalButton: {
+    flexDirection: 'row',
+    backgroundColor: theme.colors.tertiary,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: theme.sizes.sm,
+    paddingHorizontal: theme.sizes.lg,
+    borderRadius: 99,
+    gap: theme.sizes.xs,
+  },
+  modalButtonText: {
+    paddingTop: theme.sizes.xs,
+    fontFamily: theme.font_family.semiBold,
+    fontSize: theme.sizes.lg,
+    color: theme.colors.white,
   },
   optionsContainer: {
     width: '100%',
@@ -25,6 +56,11 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  root: {
+    flex: 1,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   toggleCamera: {
     width: 70,
     height: 70,
@@ -34,12 +70,4 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: theme.sizes.lg,
   },
-  innerBorder: {
-    width: 66,
-    height: 66,
-    borderRadius: 99,
-    borderWidth: 4,
-    borderColor: theme.colors.black,
-    backgroundColor: theme.colors.white,
-  }
 })
