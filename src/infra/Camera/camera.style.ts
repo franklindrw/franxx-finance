@@ -25,22 +25,6 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     width: '100%',
   },
-  modalButton: {
-    flexDirection: 'row',
-    backgroundColor: theme.colors.tertiary,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: theme.sizes.sm,
-    paddingHorizontal: theme.sizes.lg,
-    borderRadius: 99,
-    gap: theme.sizes.xs,
-  },
-  modalButtonText: {
-    paddingTop: theme.sizes.xs,
-    fontFamily: theme.font_family.semiBold,
-    fontSize: theme.sizes.lg,
-    color: theme.colors.white,
-  },
   optionsContainer: {
     width: '100%',
     height: '50%',

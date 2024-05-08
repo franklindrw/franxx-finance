@@ -4,13 +4,13 @@ import { Avatar } from '@rneui/themed'
 import { CameraIcon } from 'lucide-react-native'
 
 import { styles } from './userAvatar.style'
-
+const avatar = 'https://github.com/Franklindrw.png'
 interface UserAvatarProps {
   size?: number
-  uri?: string
+  uri?: string | null
   name: string
   edit?: boolean
-  navigation: any
+  navigation?: any
 }
 
 const UserAvatar = ({ size = 72, uri, name, edit = false, navigation }: UserAvatarProps) => {
@@ -34,7 +34,7 @@ const UserAvatar = ({ size = 72, uri, name, edit = false, navigation }: UserAvat
           containerStyle={styles.avatar}
           rounded
           size={size}
-          source={{ uri: uri }}
+          source={{ uri: uri ?? avatar }}
           title={initials}
         >
           <View style={[styles.camButton, !edit && styles.camDisabled]}>

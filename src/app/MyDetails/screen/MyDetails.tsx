@@ -1,7 +1,8 @@
 import React from 'react'
+import { useForm } from 'react-hook-form'
 import { SafeAreaView, View } from 'react-native'
 import { ChevronLeft } from 'lucide-react-native'
-import { useForm } from 'react-hook-form'
+import { UsersContext } from '../../../shared/contexts/UsersContext'
 
 import { styles } from './myDetails.style'
 
@@ -11,6 +12,7 @@ import Button from '../../../components/Button/Button'
 import UserAvatar from '../../../infra/UserAvatar/UserAvatar'
 
 export default function MyDetails({ navigation }: { navigation: any }) {
+  const { photoUri } = React.useContext(UsersContext)
   const { register, setValue, handleSubmit } = useForm()
 
   // registra os valores do input
@@ -43,7 +45,7 @@ export default function MyDetails({ navigation }: { navigation: any }) {
       <UserAvatar
         name='Franklin Almeida Campos'
         navigation={navigation}
-        uri='https://github.com/franklindrw.png'
+        uri={photoUri}
         size={100}
         edit
       />

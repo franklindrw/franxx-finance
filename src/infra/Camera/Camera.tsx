@@ -6,7 +6,8 @@ import {
   useCameraFormat,
   useCameraPermission,
 } from 'react-native-vision-camera'
-import { ChevronLeft, SwitchCamera, Zap, ZapOff, Save, XIcon } from 'lucide-react-native'
+import { ChevronLeft, SwitchCamera, Zap, ZapOff, Check, XIcon } from 'lucide-react-native'
+import { UsersContext } from '../../shared/contexts/UsersContext'
 
 import NavButton from '../../components/Navbutton/NavButton'
 
@@ -17,6 +18,7 @@ interface CameraProps {
 }
 
 export default function Camera({ navigation }: CameraProps) {
+  const { editPhoto } = React.useContext(UsersContext)
   // TODO configuracao de permissao da camera
   const { hasPermission, requestPermission } = useCameraPermission()
   const [permission, setPermission] = React.useState<null | boolean>(null)
@@ -35,7 +37,7 @@ export default function Camera({ navigation }: CameraProps) {
 
   // TODO configuração do tamanho da foto
   const format = useCameraFormat(devices, [
-    { photoResolution: { width: 720, height: 720 } }
+    { photoResolution: { width: 720, height: 720 }, autoFocusSystem: 'contrast-detection' }
   ])
 
   React.useEffect(() => {
@@ -87,6 +89,12 @@ export default function Camera({ navigation }: CameraProps) {
 
     setPhotoUri(`file://${photo.path}`)
     setModalVisible(true)
+  }
+
+  // TODO salva o caminho da uri no contexto
+  const handleSavePhoto = (uri: string) => {
+    editPhoto(uri)
+    navigation.navigate('MyDetails')
   }
 
   // [ ] fazer mensagem de nao foi possivel - se nao tiver permissao, retorna null
@@ -141,14 +149,18 @@ export default function Camera({ navigation }: CameraProps) {
             <Image source={{ uri: photoUri }} style={{ flex: 1 }} />
 
             <View style={styles.modalButtons}>
-              <TouchableOpacity style={styles.modalButton}>
-                <XIcon size={24} color='white' />
-                <Text style={styles.modalButtonText}>Fechar</Text>
+              <TouchableOpacity
+                style={styles.optionButton}
+                onPress={() => setModalVisible(false)}
+              >
+                <XIcon size={32} color='white' />
               </TouchableOpacity>
 
-              <TouchableOpacity style={styles.modalButton}>
-                <Save size={24} color='white' />
-                <Text style={styles.modalButtonText}>Salvar</Text>
+              <TouchableOpacity
+                style={styles.optionButton}
+                onPress={() => handleSavePhoto(photoUri)}
+              >
+                <Check size={32} color='white' />
               </TouchableOpacity>
             </View>
           </View>

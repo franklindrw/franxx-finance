@@ -1,7 +1,7 @@
 import React from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { View } from 'react-native';
 import { useLoadFonts } from './src/theme/fonts';
+import Providers from './src/shared/contexts/Providers'
 import Routes from './src/routes/routes';
 
 export default function App() {
@@ -12,8 +12,8 @@ export default function App() {
   }
 
   return (
-    <SafeAreaProvider>
+    <Providers>
       <Routes />
-    </SafeAreaProvider>
+    </Providers>
   );
 }

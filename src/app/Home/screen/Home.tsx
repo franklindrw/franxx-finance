@@ -1,5 +1,6 @@
 import React from "react";
 import { SafeAreaView, View, Text } from "react-native";
+import { UsersContext } from "../../../shared/contexts/UsersContext";
 import { styles } from "./home.style";
 import { theme } from "../../../theme/theme";
 
@@ -11,6 +12,7 @@ import TransactionButton from "../components/TransactionButton/TransactionButton
 const data = require('../../../data/recent_activity.json');
 
 export default function Home({ navigation }: { navigation: any }) {
+  const { photoUri } = React.useContext(UsersContext)
   const [openModal, setOpenModal] = React.useState(false);
   const [transactionType, setTransactionType] = React.useState("");
 
@@ -35,7 +37,7 @@ export default function Home({ navigation }: { navigation: any }) {
     <SafeAreaView style={styles.root}>
       <Heading
         name="Franklin Campos"
-        src="https://github.com/franklindrw.png"
+        photo={photoUri}
         notifications={0}
         userAction={handleNavigateProfile}
       />

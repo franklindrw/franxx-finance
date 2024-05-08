@@ -2,6 +2,7 @@ import React from "react";
 import { SafeAreaView, View, Text } from "react-native";
 import DeviceInfo from "react-native-device-info";
 import { User2Icon, FileText, CircleX, LogOut } from 'lucide-react-native'
+import { UsersContext } from "../../shared/contexts/UsersContext";
 
 import { styles } from "./user.style";
 
@@ -11,6 +12,7 @@ import PrivacityPolicy from "../../components/PrivacityPolice/PrivacityPolicy";
 import UserAvatar from "../../infra/UserAvatar/UserAvatar";
 
 export default function User({ navigation }: { navigation: any }) {
+  const { photoUri } = React.useContext(UsersContext)
   const [modalVisible, setModalVisible] = React.useState(false);
   let version = DeviceInfo.getVersion();
 
@@ -44,7 +46,7 @@ export default function User({ navigation }: { navigation: any }) {
       <View style={styles.title_container}>
         <UserAvatar
           name='Franklin Almeida Campos'
-          uri='https://github.com/franklindrw.png'
+          uri={photoUri}
           size={100}
         />
         <Text style={styles.title_text}>Frankin Almeida Campos</Text>

@@ -8,18 +8,18 @@ import { styles } from "./heading.style";
 
 interface HeadingProps {
   name: string;
-  src?: string;
+  photo?: string;
   notifications?: number;
   userAction?: () => void;
 }
 
-export default function Heading({ name, src, userAction, notifications = 0 }: HeadingProps) {
+export default function Heading({ name, photo, userAction, notifications = 0 }: HeadingProps) {
   return (
     <View style={styles.header}>
       <TouchableOpacity style={styles.flex_container} onPress={userAction}>
         <UserAvatar
-          name='Franklin Almeida Campos'
-          uri='https://github.com/franklindrw.png'
+          name={name}
+          uri={photo}
           size={48}
         />
         <View>
