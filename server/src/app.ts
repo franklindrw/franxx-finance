@@ -17,7 +17,8 @@ app.get('/', async (request, reply) => {
 // init server config
 const start = async () => {
   try {
-    await app.listen({ port: 3333 });
+    const PORT = Number(process.env.PORT) || 3000;
+    app.listen({ port: PORT });
     app.log.info(`Server listening on ${app.server.address()}`);
   } catch (err) {
     console.error(err);
