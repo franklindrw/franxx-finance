@@ -8,6 +8,10 @@
     "web": "expo start --web",
     "test": "jest"
   },
+  "author": {
+    "name": "Franklin Almeida Campos",
+    "license": "MIT"
+  },
   "dependencies": {
     "@expo-google-fonts/poppins": "^0.2.3",
     "@react-native-community/datetimepicker": "7.6.1",

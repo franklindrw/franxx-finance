@@ -19,23 +19,23 @@ interface CameraProps {
 
 export default function Camera({ navigation }: CameraProps) {
   const { editPhoto } = React.useContext(UsersContext)
-  // TODO configuracao de permissao da camera
+  // NOTE: configuracao de permissao da camera
   const { hasPermission, requestPermission } = useCameraPermission()
   const [permission, setPermission] = React.useState<null | boolean>(null)
   const camera = React.useRef<VisionCamera>(null)
 
-  // TODO configuracao de controles da camera
+  // NOTE: configuracao de controles da camera
   const [ cameraPosition, setCameraPosition ] = React.useState<"front" | "back">('front')
   const [ isFlashOn, setIsFlashOn ] = React.useState(false)
   const FlashIcon = isFlashOn ? Zap : ZapOff
 
-  // TODO armazenamento e preview da foto
+  // NOTE: armazenamento e preview da foto
   const [ photoUri, setPhotoUri ] = React.useState<string | null>(null)
   const [ modalVisible, setModalVisible ] = React.useState(false)
 
   const devices = useCameraDevice(cameraPosition)
 
-  // TODO configuração do tamanho da foto
+  // NOTE: configuração do tamanho da foto
   const format = useCameraFormat(devices, [
     { photoResolution: { width: 720, height: 720 }, autoFocusSystem: 'contrast-detection' }
   ])
@@ -56,12 +56,11 @@ export default function Camera({ navigation }: CameraProps) {
     })()
   }, [])
 
-  // TODO acao para trocar a camera
+  // NOTE: camera button actions
   const handleToggleCamera = () => {
     setCameraPosition(cameraPosition === 'front' ? 'back' : 'front')
   }
 
-  // TODO acao para ligar/desligar o flash
   const handleToggleFlash = () => {
     if (!devices) return
 
@@ -74,12 +73,10 @@ export default function Camera({ navigation }: CameraProps) {
     setIsFlashOn(!isFlashOn)
   }
 
-  // TODO acao para fechar a camera
   const handleCloseCamera = () => {
     navigation.goBack()
   }
 
-  // TODO acao para tirar a foto
   const handleTakePicture = async () => {
     if (!camera.current) return
 
@@ -91,7 +88,6 @@ export default function Camera({ navigation }: CameraProps) {
     setModalVisible(true)
   }
 
-  // TODO salva o caminho da uri no contexto
   const handleSavePhoto = (uri: string) => {
     editPhoto(uri)
     navigation.navigate('MyDetails')
