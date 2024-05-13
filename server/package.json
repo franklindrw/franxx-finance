@@ -8,8 +8,8 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "start": "node dist/app.js",
-    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/app.ts"
+    "start": "node --env-file=.env dist/app.js",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec node -r ts-node/register --env-file=.env src/app.ts"
   },
   "keywords": [],
   "author": "Franklin Almeida Campos",
