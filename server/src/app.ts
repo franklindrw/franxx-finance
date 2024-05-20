@@ -2,11 +2,18 @@ import fastify, { type FastifyInstance } from 'fastify';
 import cors from '@fastify/cors';
 import helmet from '@fastify/helmet';
 
+import authRoutes from './app/routes/authRoutes';
+import userRoutes from './app/routes/userRoutes';
+
 const app: FastifyInstance = fastify({ logger: true });
 
 //Middlewares
 app.register(cors);
 app.register(helmet);
+
+// routes register
+app.register(authRoutes);
+app.register(userRoutes, { prefix: '/users' });
 
 // router test root
 app.get('/', async (request, reply) => {
