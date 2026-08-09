@@ -1,3 +1,21 @@
+> ⚠️ **AVISO DE SEGURANÇA E MANUTENÇÃO / SECURITY AND MAINTENANCE NOTICE** ⚠️
+> 
+> **[PT-BR]** 
+> Este é o **único repositório oficial** deste projeto em React Native. Fui notificado de que cópias não autorizadas deste código foram modificadas com malware e estão sendo distribuídas por terceiros em outras plataformas (como links do Google Drive).
+> 
+> * **Fonte Segura:** A única versão original é a mantida por mim, **Franklin Almeida Campos**, diretamente neste perfil do GitHub. Não faça download nem execute versões deste projeto oriundas de fontes externas.
+> * **Status do Projeto:** Este repositório foi criado estritamente para **fins de estudo**. As bibliotecas e dependências estão desatualizadas e não tenho a intenção de realizar atualizações ou manutenções ativas no momento.
+> * **Licença e Responsabilidade:** Este projeto é de código aberto e utiliza a **Licença MIT**. Conforme os termos da licença, o software é fornecido "no estado em que se encontra" (*as is*), sem garantias de qualquer tipo. Eu não tenho vínculo e **não me responsabilizo** por quaisquer danos causados por versões adulteradas distribuídas por terceiros ou por eventuais vulnerabilidades decorrentes de dependências antigas.
+> 
+> ---
+> 
+> **[EN]** 
+> This is the **only official repository** for this React Native project. I have been notified that unauthorized copies of this code have been modified with malware and are being distributed by third parties on other platforms (such as Google Drive links).
+> 
+> * **Safe Source:** The only safe and original version is the one maintained by me, **Franklin Almeida Campos**, directly on this GitHub profile. Do not download or run versions of this project from external sources.
+> * **Project Status:** This repository was created strictly for **educational purposes**. Libraries and dependencies are currently outdated, and I have no intention of providing active maintenance or updates at this time.
+> * **License and Liability:** This is an open-source project provided under the **MIT License**. As per the explicit terms of the license, the software is provided "as is", without warranty of any kind. I have no affiliation with and **am not liable** for any damages caused by tampered versions distributed by third parties or any vulnerabilities arising from outdated dependencies.
+
 ![banner](https://github.com/franklindrw/franxx-finance/assets/81038899/958166e2-f369-41b5-8bbe-70bc728e5c6a)
 
 <br />
